@@ -12,13 +12,13 @@ using UnityEngine;
 public class EnemyController : Unit
 {
     GameObject _player;
-    Rigidbody2D _rb;
+    Rigidbody _rb;
     EnemyData _data;
     private List<PlayerController> _playersInTrigger = new List<PlayerController>();
 
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody>();
     }
 
 
@@ -50,12 +50,12 @@ public class EnemyController : Unit
     private void MoveToPlayer()
     {
         Vector3 direction = _player.transform.position - transform.position;
-        direction.z = 0;
+        direction.y = 0;
 
         float moveStep = _data.MoveSpeed * Time.deltaTime;
         if (moveStep >= direction.magnitude)
         {
-            _rb.linearVelocity = Vector2.zero;
+            _rb.linearVelocity = Vector3.zero;
             transform.position = _player.transform.position;
         }
         else
@@ -83,9 +83,9 @@ public class EnemyController : Unit
         xp.GetComponent<CollectableXp>().Initialize(1);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter(Collider col)
     {
-        var other = HitWithParent.GetComponent<PlayerController>(col);
+        var other = col.GetComponentInParent<PlayerController>();
 
         if (other != null)
         {
@@ -94,9 +94,9 @@ public class EnemyController : Unit
         }
     }
 
-    private void OnTriggerExit2D(Collider2D col)
+    private void OnTriggerExit(Collider col)
     {
-        var other = HitWithParent.GetComponent<PlayerController>(col);
+        var other = col.GetComponentInParent<PlayerController>();
 
         if (other != null)
         {

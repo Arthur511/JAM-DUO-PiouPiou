@@ -33,9 +33,9 @@ public class Bullet : MonoBehaviour
         transform.position += _direction * _speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter(Collider col)
     {
-        var other = HitWithParent.GetComponent<Unit>(col);
+        var other = col.GetComponent<Unit>();
 
         if (other == null)
         {
@@ -44,7 +44,6 @@ public class Bullet : MonoBehaviour
         else if (other.Team != _team)
         {
             GameObject.Destroy(gameObject);
-
             other.Hit(_damage);
         }
     }

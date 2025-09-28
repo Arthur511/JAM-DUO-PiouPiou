@@ -32,16 +32,15 @@ public class PlayerController : Unit
 
 
     bool _isDead;
-    Rigidbody2D _rb;
-    Vector2 _inputs;
-    Vector2 _lastDirection = Vector2.right;
+    Rigidbody _rb;
+    Vector3 _inputs;
+    Vector3 _lastDirection = Vector3.right;
     float _lastDirectionX = 1;
     List<WeaponBase> _weapons = new List<WeaponBase>();
 
     void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
-
+        _rb = GetComponent<Rigidbody>();
         UpgradesAvailable = new List<UpgradeData>();
         UpgradesAvailable.AddRange(_playerData.Upgrades);
     }
@@ -75,14 +74,14 @@ public class PlayerController : Unit
     {
         if (MainGameplay.Instance.State != MainGameplay.GameState.Gameplay)
         {
-            _inputs = new Vector2();
+            _inputs = new Vector3();
             return;
         }
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        _inputs = new Vector2(horizontal, vertical);
+        _inputs = new Vector3(horizontal, 0, vertical);
     }
 
 

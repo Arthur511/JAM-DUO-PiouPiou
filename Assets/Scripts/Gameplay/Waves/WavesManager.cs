@@ -44,22 +44,26 @@ public class WavesManager : MonoBehaviour
         {
             GameObject go = GameObject.Instantiate(data.Enemy.Prefab);
 
-            Vector3 spawnPosition = Random.insideUnitCircle;
-            spawnPosition.z = 0;
+            Vector3 spawnPosition = new Vector3(Random.Range(_bottomLeft.position.x, _topRight.position.x), 0, Random.Range(_bottomLeft.position.z, _topRight.position.z));
+            spawnPosition.y = 0;
             spawnPosition.Normalize();
 
             Vector3 tempPosition = MainGameplay.Instance.Player.transform.position + spawnPosition * data.SpawnDistance;
-            if (tempPosition.x > _topRight.transform.position.x ||
+            /*if (tempPosition.x > _topRight.transform.position.x ||
                 tempPosition.x < _bottomLeft.transform.position.x)
             {
                 spawnPosition.x = -spawnPosition.x;
             }
-            if (tempPosition.y > _topRight.transform.position.y ||
-                tempPosition.y < _bottomLeft.transform.position.y)
+            if (tempPosition.z > _topRight.transform.position.z ||
+                tempPosition.z < _bottomLeft.transform.position.z)
             {
-                spawnPosition.y = -spawnPosition.y;
-            }
-            
+                spawnPosition.z = -spawnPosition.z;
+            }*/
+
+            // Clamp dans les limites
+            tempPosition.x = Mathf.Clamp(tempPosition.x, _bottomLeft.position.x, _topRight.position.x);
+            tempPosition.z = Mathf.Clamp(tempPosition.z, _bottomLeft.position.z, _topRight.position.z);
+
             go.transform.position = MainGameplay.Instance.Player.transform.position + spawnPosition * data.SpawnDistance;
             
             var enemy = go.GetComponent<EnemyController>();
