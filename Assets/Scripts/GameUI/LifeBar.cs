@@ -6,6 +6,7 @@ using UnityEngine;
 public class LifeBar : MonoBehaviour
 {
     [SerializeField] SpriteRenderer _spriteRenderer;
+    [SerializeField] Transform _transform;
 
     public void SetValue(float value)
     {
@@ -22,6 +23,12 @@ public class LifeBar : MonoBehaviour
         var localScale = _spriteRenderer.transform.localScale;
         localScale = new Vector3(value, localScale.y, localScale.z);
         _spriteRenderer.transform.localScale = localScale;
+    }
+
+    void LateUpdate()
+    {
+        transform.position = _transform.position;
+        transform.rotation = _transform.rotation;  
     }
 
 }

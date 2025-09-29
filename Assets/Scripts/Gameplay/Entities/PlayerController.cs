@@ -27,9 +27,13 @@ public class PlayerController : Unit
 
     public List<WeaponBase> Weapons => _weapons;
 
+    float _speedRotation = 10;
+    protected Quaternion _targetRotation;
+
+
     int _level = 1;
     int _xp = 0;
-
+    
 
     bool _isDead;
     Rigidbody _rb;
@@ -88,6 +92,8 @@ public class PlayerController : Unit
     void FixedUpdate()
     {
         Move();
+        if (_inputs != Vector3.zero)
+            Rotation();
     }
 
     private void Shoot()
@@ -117,6 +123,14 @@ public class PlayerController : Unit
         {
             _rb.linearVelocity = new Vector2();
         }
+    }
+
+
+    protected void Rotation()
+    {
+        // change l'angle (rotation)
+        _targetRotation = Quaternion.LookRotation(_inputs, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _speedRotation * Time.deltaTime);
     }
 
     public override void Hit(float damage)

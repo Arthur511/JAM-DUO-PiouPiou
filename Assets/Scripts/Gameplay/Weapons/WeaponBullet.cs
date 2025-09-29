@@ -2,7 +2,7 @@
 
 namespace Gameplay.Weapons
 {
-    
+
     /// <summary>
     /// Represents a weapon that shot one bullet at a time to the closest enemy
     /// </summary>
@@ -15,8 +15,8 @@ namespace Gameplay.Weapons
         public WeaponBullet()
         {
         }
-        
-        public override void Update( PlayerController player )
+
+        public override void Update(PlayerController player)
         {
             _timerCoolDown += Time.deltaTime;
 
@@ -29,14 +29,16 @@ namespace Gameplay.Weapons
             if (enemy == null)
                 return;
 
-            var playerPosition = player.transform.position;
+            var playerPosition = player.transform.position + Vector3.up;
+
             GameObject go = GameObject.Instantiate(_prefab, playerPosition, Quaternion.identity);
             Vector3 direction = enemy.transform.position - playerPosition;
             if (direction.sqrMagnitude > 0)
             {
                 direction.Normalize();
 
-                go.GetComponent<Bullet>().Initialize(direction, GetDamage(),_speed);
+                go.GetComponent<Bullet>().Initialize(direction, GetDamage(), _speed);
+                
             }
         }
     }
