@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca8c8437b00b3a4ca793e4e5492b008, type: 3}
+  m_Name: 2 Timpani Radius
+  m_EditorClassIdentifier: 
+  _weapon:
+    rid: 5168253336096079931
+  _slotIndex: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 5168253336096079931
+      type: {class: WeaponTimpani, ns: Gameplay.Weapons, asm: Assembly-CSharp}
+      data:
+        _damageMin: 6
+        _damageMax: 8
+        _coolDown: 5
+        _prefab: {fileID: 3633932044844237191, guid: 6214cd9ecfa282d4aaa4e3761d1d5d8e, type: 3}
+        _radius: 6

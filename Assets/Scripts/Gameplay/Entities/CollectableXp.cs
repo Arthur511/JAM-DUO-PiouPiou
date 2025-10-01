@@ -12,9 +12,9 @@ public class CollectableXp : MonoBehaviour
         Value = value;
     }
     
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter(Collider col)
     {
-        var other = HitWithParent.GetComponent<PlayerController>(col);
+        var other = col.GetComponent<PlayerController>();
         
         if (other != null)
         {
@@ -22,7 +22,4 @@ public class CollectableXp : MonoBehaviour
             GameObject.Destroy(gameObject);
         }
     }
-    
-    
-    
 }
