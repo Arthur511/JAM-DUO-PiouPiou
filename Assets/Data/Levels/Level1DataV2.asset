@@ -19,11 +19,11 @@ MonoBehaviour:
     _enemyCount: 4
     _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
-    _spawnDistance: 15
+    _spawnDistance: 10
   - _timeToStart: 10
     _timesToRepeat: 1
     _repeatTimer: 0
     _enemyCount: 1
     _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
-    _spawnDistance: 15
+    _spawnDistance: 10

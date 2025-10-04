@@ -33,16 +33,23 @@ public class MainGameplay : MonoBehaviour
     [SerializeField] GameUIManager _gameUIManager;
 
     [SerializeField] GameObject _prefabXp;
+    [SerializeField] GameObject _superPrefabXp;
+
+    [SerializeField] AudioSource _audioSource;
+    [SerializeField] AudioClip _audioClip;
 
     #endregion
-    
+
     #region Properties
 
     public PlayerController Player => _player;
     public GameObject PrefabXP => _prefabXp;
+    public GameObject SuperPrefabXP => _superPrefabXp;
     public GameState State { get; private set; }
     public List<EnemyController> Enemies => _enemies;
     public GameUIManager GameUIManager => _gameUIManager;
+    public AudioSource AudioSource => _audioSource;
+    public AudioClip AudioClip => _audioClip;
 
     #endregion
 

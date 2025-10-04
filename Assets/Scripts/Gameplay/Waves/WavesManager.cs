@@ -42,29 +42,14 @@ public class WavesManager : MonoBehaviour
     {
         for (int i = 0; i < data.EnemyCount; i++)
         {
-            GameObject go = GameObject.Instantiate(data.Enemy.Prefab);
+            Vector2 randomC = Random.insideUnitCircle.normalized;
+            Vector3 direction = new Vector3(randomC.x, 0, randomC.y);
 
-            Vector3 spawnPosition = new Vector3(Random.Range(_bottomLeft.position.x, _topRight.position.x), 0, Random.Range(_bottomLeft.position.z, _topRight.position.z));
-            spawnPosition.y = 0;
-            spawnPosition.Normalize();
+            Vector3 spawnPosition = MainGameplay.Instance.Player.transform.position + direction * data.SpawnDistance;
+            spawnPosition.x = Mathf.Clamp(spawnPosition.x, _bottomLeft.position.x, _topRight.position.x);
+            spawnPosition.z = Mathf.Clamp(spawnPosition.z, _bottomLeft.position.z, _topRight.position.z);
 
-            Vector3 tempPosition = MainGameplay.Instance.Player.transform.position + spawnPosition * data.SpawnDistance;
-            /*if (tempPosition.x > _topRight.transform.position.x ||
-                tempPosition.x < _bottomLeft.transform.position.x)
-            {
-                spawnPosition.x = -spawnPosition.x;
-            }
-            if (tempPosition.z > _topRight.transform.position.z ||
-                tempPosition.z < _bottomLeft.transform.position.z)
-            {
-                spawnPosition.z = -spawnPosition.z;
-            }*/
-
-            // Clamp dans les limites
-            tempPosition.x = Mathf.Clamp(tempPosition.x, _bottomLeft.position.x, _topRight.position.x);
-            tempPosition.z = Mathf.Clamp(tempPosition.z, _bottomLeft.position.z, _topRight.position.z);
-
-            go.transform.position = MainGameplay.Instance.Player.transform.position + spawnPosition * data.SpawnDistance;
+            GameObject go = GameObject.Instantiate(data.Enemy.Prefab, spawnPosition, Quaternion.identity);
             
             var enemy = go.GetComponent<EnemyController>();
             enemy.Initialize(MainGameplay.Instance.Player.gameObject , data.Enemy);

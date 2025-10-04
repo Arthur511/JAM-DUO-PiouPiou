@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// Represents an enemy who's moving toward the player
@@ -15,6 +16,16 @@ public class EnemyController : Unit
     Rigidbody _rb;
     EnemyData _data;
     private List<PlayerController> _playersInTrigger = new List<PlayerController>();
+
+
+    [Header("Enchantment")]
+    public bool IsEnchant = false;
+    private Vector3 _enchantCenter;
+    private float _enchantRadius = 2f;
+    private float _enchantAngle = 0f;
+    private float _enchantSpeed = 180f;
+    [HideInInspector]public float TimerEnchanted = 3f;
+    [HideInInspector]public float CurrentTimerEnchanted;
 
     private void Awake()
     {
@@ -44,7 +55,10 @@ public class EnemyController : Unit
 
     void FixedUpdate()
     {
-        MoveToPlayer();
+        if (!IsEnchant)
+            MoveToPlayer();
+        else
+            Enchanted();
     }
 
     private void MoveToPlayer()
@@ -65,6 +79,33 @@ public class EnemyController : Unit
         }
     }
 
+    private void Enchanted()
+    {
+        if (CurrentTimerEnchanted > 0)
+        {
+            CurrentTimerEnchanted-= Time.deltaTime;
+            if (_enchantCenter == Vector3.zero)
+            {
+                _enchantCenter = transform.position;
+                _enchantAngle = 0f;
+            }
+            _enchantAngle += _enchantSpeed * Time.deltaTime;
+
+            float rad = _enchantAngle * Mathf.Deg2Rad;
+            Vector3 offset = new Vector3(Mathf.Cos(rad), 0, Mathf.Sin(rad)) * _enchantRadius;
+            Vector3 targetPos = _enchantCenter + offset;
+
+            Vector3 moveDir = (targetPos - transform.position).normalized;
+            _rb.linearVelocity = moveDir * (_data.MoveSpeed*Random.Range(1.5f , 4));
+
+        }
+        else
+        {
+            IsEnchant = false;
+        }
+
+    }
+
     public override void Hit(float damage)
     {
         _life -= damage;
@@ -82,6 +123,15 @@ public class EnemyController : Unit
         var xp = GameObject.Instantiate(MainGameplay.Instance.PrefabXP, transform.position, Quaternion.identity);
         xp.GetComponent<CollectableXp>().Initialize(1);
     }
+    public void DieFromFlute()
+    {
+        MainGameplay.Instance.Enemies.Remove(this);
+        MainGameplay.Instance.AudioSource.PlayOneShot(MainGameplay.Instance.AudioClip);
+        GameObject.Destroy(gameObject);
+        var xp = GameObject.Instantiate(MainGameplay.Instance.SuperPrefabXP, transform.position, Quaternion.identity);
+        xp.GetComponent<CollectableXp>().Initialize(5);
+    }
+
 
     private void OnTriggerEnter(Collider col)
     {
