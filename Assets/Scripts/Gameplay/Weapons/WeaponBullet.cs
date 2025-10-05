@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Gameplay.Weapons
 {
@@ -11,6 +13,9 @@ namespace Gameplay.Weapons
 
         [SerializeField] GameObject _prefab;
         [SerializeField] float _speed;
+
+        [SerializeField] int _maxProjectileInShoot;
+        //int _currentProjectileShoot = 1;
 
         public WeaponBullet()
         {
@@ -25,20 +30,27 @@ namespace Gameplay.Weapons
 
             _timerCoolDown -= _coolDown;
 
-            EnemyController enemy = MainGameplay.Instance.GetClosestEnemy(player.transform.position);
-            if (enemy == null)
+            List<EnemyController> enemies = MainGameplay.Instance.GetClosestEnemy(player.transform.position, _maxProjectileInShoot);
+            if (enemies == null)
                 return;
+            
+            player.StartCoroutine(ShootEnemies(enemies, player));
 
-            var playerPosition = player.transform.position + Vector3.up;
-
-            GameObject go = GameObject.Instantiate(_prefab, playerPosition, Quaternion.identity);
-            Vector3 direction = enemy.transform.position - playerPosition;
-            if (direction.sqrMagnitude > 0)
+        }
+        private IEnumerator ShootEnemies(List<EnemyController> enemies, PlayerController player)
+        {
+            foreach (EnemyController enemy in enemies)
             {
-                direction.Normalize();
-
+                var playerPosition = player.transform.position + Vector3.up;
+                Vector3 direction = enemy.transform.position - playerPosition;
+                if (direction.sqrMagnitude > 0)
+                {
+                    direction.Normalize();
+                }
+                GameObject go = GameObject.Instantiate(_prefab, playerPosition, Quaternion.identity);
                 go.GetComponent<Bullet>().Initialize(direction, GetDamage(), _speed);
-                
+
+                yield return new WaitForSeconds(0.2f);
             }
         }
     }

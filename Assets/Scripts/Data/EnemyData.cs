@@ -14,7 +14,15 @@ public class EnemyData : ScriptableObject
 
     [SerializeField] float _life;
     [SerializeField] float _damagePerSeconds;
-    [SerializeField] float _moveSpeed;
+    [SerializeField] float _maxSpeed;
+    [SerializeField] float _minSpeed;
+    float _moveSpeed;
     [SerializeField] GameObject _prefab;
     [SerializeField] Sprite _spriteOverride;
+
+    private void Awake()
+    {
+        _moveSpeed = Random.Range(_minSpeed, _maxSpeed);
+    }
+
 }

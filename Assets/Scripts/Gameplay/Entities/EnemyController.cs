@@ -19,14 +19,16 @@ public class EnemyController : Unit
 
 
     [Header("Enchantment")]
-    public bool IsEnchant = false;
-    private Vector3 _enchantCenter;
-    private float _enchantRadius = 2f;
-    private float _enchantAngle = 0f;
-    private float _enchantSpeed = 180f;
+    public bool IsBewitch = false;
+    private Vector3 _bewitchCenter;
+    private float _bewitchRadius = 2f;
+    private float _bewitchAngle = 0f;
+    private float _bewitchSpeed = 180f;
     [HideInInspector]public float TimerEnchanted = 3f;
     [HideInInspector]public float CurrentTimerEnchanted;
 
+
+    [SerializeField]EnemyMove _movementType;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -55,7 +57,7 @@ public class EnemyController : Unit
 
     void FixedUpdate()
     {
-        if (!IsEnchant)
+        if (!IsBewitch)
             MoveToPlayer();
         else
             Enchanted();
@@ -63,7 +65,10 @@ public class EnemyController : Unit
 
     private void MoveToPlayer()
     {
-        Vector3 direction = _player.transform.position - transform.position;
+        Vector3 velocity = _movementType.GetMovement(transform, _player.transform, _data.MoveSpeed);
+        _rb.linearVelocity = velocity;
+
+        /*Vector3 direction = _player.transform.position - transform.position;
         direction.y = 0;
 
         float moveStep = _data.MoveSpeed * Time.deltaTime;
@@ -76,7 +81,7 @@ public class EnemyController : Unit
         {
             direction.Normalize();
             _rb.linearVelocity = direction * _data.MoveSpeed;
-        }
+        }*/
     }
 
     private void Enchanted()
@@ -84,16 +89,16 @@ public class EnemyController : Unit
         if (CurrentTimerEnchanted > 0)
         {
             CurrentTimerEnchanted-= Time.deltaTime;
-            if (_enchantCenter == Vector3.zero)
+            if (_bewitchCenter == Vector3.zero)
             {
-                _enchantCenter = transform.position;
-                _enchantAngle = 0f;
+                _bewitchCenter = transform.position;
+                _bewitchAngle = 0f;
             }
-            _enchantAngle += _enchantSpeed * Time.deltaTime;
+            _bewitchAngle += _bewitchSpeed * Time.deltaTime;
 
-            float rad = _enchantAngle * Mathf.Deg2Rad;
-            Vector3 offset = new Vector3(Mathf.Cos(rad), 0, Mathf.Sin(rad)) * _enchantRadius;
-            Vector3 targetPos = _enchantCenter + offset;
+            float rad = _bewitchAngle * Mathf.Deg2Rad;
+            Vector3 offset = new Vector3(Mathf.Cos(rad), 0, Mathf.Sin(rad)) * _bewitchRadius;
+            Vector3 targetPos = _bewitchCenter + offset;
 
             Vector3 moveDir = (targetPos - transform.position).normalized;
             _rb.linearVelocity = moveDir * (_data.MoveSpeed*Random.Range(1.5f , 4));
@@ -101,7 +106,7 @@ public class EnemyController : Unit
         }
         else
         {
-            IsEnchant = false;
+            IsBewitch = false;
         }
 
     }

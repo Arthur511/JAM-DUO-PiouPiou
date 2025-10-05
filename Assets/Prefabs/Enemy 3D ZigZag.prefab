@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3096487904964586826}
   - component: {fileID: 5059163776462076841}
   m_Layer: 6
-  m_Name: Enemy 3D
+  m_Name: Enemy 3D ZigZag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   IsBewitch: 0
   TimerEnchanted: 3
   CurrentTimerEnchanted: 0
-  _movementType: {fileID: 11400000, guid: 747378b3eda9c3748a88c0585eb6fd44, type: 2}
+  _movementType: {fileID: 11400000, guid: 4d2fda32dc67407478b8c80d739a75ae, type: 2}
 --- !u!54 &-3096487904964586826
 Rigidbody:
   m_ObjectHideFlags: 0

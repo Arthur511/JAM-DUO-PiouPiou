@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Triangle
   m_EditorClassIdentifier: 
   _weapon:
-    rid: 906285755611480125
+    rid: 906285774195916859
   _slotIndex: 3
   references:
     version: 2
     RefIds:
-    - rid: 906285755611480125
-      type: {class: WeaponTriangle, ns: , asm: Assembly-CSharp}
+    - rid: 906285774195916859
+      type: {class: WeaponFlute, ns: Gameplay.Weapons, asm: Assembly-CSharp}
       data:
         _damageMin: 0
         _damageMax: 0
-        _coolDown: 2
+        _coolDown: 10
+        _prefab: {fileID: 0}
+        _maxDistance: 10

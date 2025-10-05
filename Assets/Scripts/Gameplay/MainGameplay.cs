@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -158,20 +159,22 @@ public class MainGameplay : MonoBehaviour
         State = GameState.GameOver;
         _gameUIManager.DisplayVictory();
     }
-    
+
     public void OnClickQuit()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
     #endregion
-    
+
     #region Tools
 
-    public EnemyController GetClosestEnemy(Vector3 position)
+    public List<EnemyController> GetClosestEnemy(Vector3 position, int nbEnemy)
     {
-        float bestDistance = float.MaxValue;
-        EnemyController bestEnemy = null;
+        /*float bestDistance = float.MaxValue;
+        EnemyController bestEnemy = null;*/
+
+        Dictionary<EnemyController, float> distanceFromEnemies = new Dictionary<EnemyController, float>();
 
         foreach (var enemy in _enemies)
         {
@@ -179,14 +182,20 @@ public class MainGameplay : MonoBehaviour
 
             float distance = direction.sqrMagnitude;
 
-            if (distance < bestDistance)
+            distanceFromEnemies.Add(enemy, distance);
+            /*if (distance < bestDistance)
             {
                 bestDistance = distance;
                 bestEnemy = enemy;
-            }
+            }*/
         }
+        var closestEnemies = distanceFromEnemies.
+                OrderBy(key => key.Value).
+                Take(nbEnemy).
+                Select(key => key.Key).
+                ToList();
 
-        return bestEnemy;
+        return closestEnemies;
     }
 
     List<EnemyController> _enemiesOnScreen = new List<EnemyController>();

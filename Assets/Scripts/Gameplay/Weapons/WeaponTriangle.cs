@@ -19,7 +19,7 @@ namespace Gameplay.Weapons
             {
                 if (hit.gameObject.TryGetComponent<EnemyController>(out EnemyController enemy))
                 {
-                    enemy.IsEnchant = true;
+                    enemy.IsBewitch = true;
                     enemy.CurrentTimerEnchanted = enemy.TimerEnchanted;
                 }
             }

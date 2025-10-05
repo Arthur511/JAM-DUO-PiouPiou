@@ -23,7 +23,14 @@ MonoBehaviour:
   - _timeToStart: 10
     _timesToRepeat: 1
     _repeatTimer: 0
-    _enemyCount: 1
+    _enemyCount: 2
+    _enemy: {fileID: 11400000, guid: d2e6d038b972e184db0dd3298f31b1c4, type: 2}
+    _movementType: 0
+    _spawnDistance: 12
+  - _timeToStart: 20
+    _timesToRepeat: 1
+    _repeatTimer: 2
+    _enemyCount: 3
     _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
-    _spawnDistance: 10
+    _spawnDistance: 8

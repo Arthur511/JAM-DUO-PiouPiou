@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc039ccc39f388b4d87fcee0a88c2b02, type: 3}
-  m_Name: Enemy_3d 1
+  m_Name: Enemy_3d 2
   m_EditorClassIdentifier: 
-  _life: 12
-  _damagePerSeconds: 15
-  _maxSpeed: 1.5
-  _minSpeed: 0.8
-  _prefab: {fileID: 7654918703708801626, guid: bee5c24a7ac54074aad08bd31607529e, type: 3}
+  _life: 8
+  _damagePerSeconds: 20
+  _maxSpeed: 2
+  _minSpeed: 3
+  _prefab: {fileID: 7654918703708801626, guid: d40f85fe73138fe43a2bfe38bdd7dcb1, type: 3}
   _spriteOverride: {fileID: 0}
