@@ -19,4 +19,6 @@ public class SettingsMenu : MonoBehaviour
         //int normValue = (int)((volume + 80) / (sliderVolume.maxValue + 80) * 100);
         //textVolume.text = Convert.ToString(normValue);
     }
+
+    
 }

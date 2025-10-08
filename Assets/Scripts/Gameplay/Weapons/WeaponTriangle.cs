@@ -4,7 +4,9 @@ namespace Gameplay.Weapons
 {
     public class WeaponTriangle : WeaponBase
     {
-        
+
+        [SerializeField] AudioClip _triangleSound;
+        [SerializeField] AudioSource _triangleAudioSource;
         public override void Update(PlayerController player)
         {
             _timerCoolDown += Time.deltaTime;
@@ -15,6 +17,8 @@ namespace Gameplay.Weapons
 
             Collider[] hits = Physics.OverlapSphere(player.transform.position, 4);
             
+            AudioManager.instance.PlayASound(_triangleAudioSource, _triangleSound);
+
             foreach (Collider hit in hits)
             {
                 if (hit.gameObject.TryGetComponent<EnemyController>(out EnemyController enemy))
@@ -23,7 +27,6 @@ namespace Gameplay.Weapons
                     enemy.CurrentTimerEnchanted = enemy.TimerEnchanted;
                 }
             }
-
 
         }
 

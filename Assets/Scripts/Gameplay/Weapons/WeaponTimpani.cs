@@ -10,6 +10,9 @@ namespace Gameplay.Weapons
         [SerializeField] GameObject _prefab;
         [Range(1, 10)][SerializeField] float _radius;
 
+        [SerializeField] AudioSource _timpaniAudioSource;
+        [SerializeField] AudioClip _timpaniSound;
+
         GameObject go;
 
         public WeaponTimpani()
@@ -27,6 +30,9 @@ namespace Gameplay.Weapons
 
             Collider[] hits = Physics.OverlapSphere(player.transform.position, _radius);
             go = GameObject.Instantiate(_prefab, player.transform.position, Quaternion.LookRotation(Vector3.up), player.transform);
+
+            AudioManager.instance.PlayASound(_timpaniAudioSource, _timpaniSound);
+
             float diameter = _radius * 2f;
             Vector3 spriteSize = go.GetComponent<SpriteRenderer>().sprite.bounds.size;
             go.transform.localScale = new Vector3(diameter/spriteSize.x , diameter / spriteSize.y, 1f);
