@@ -399,6 +399,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &314212869
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 792.1765
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 372.15985
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 372.15985
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.254
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.027293
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
+      propertyPath: m_Name
+      value: MusicLines
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: acc02e8e1ef4d7b40a5a7905c812ca15, type: 3}
 --- !u!1 &1292258532
 GameObject:
   m_ObjectHideFlags: 0
@@ -5232,6 +5301,83 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &1327713022
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 357.652
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 357.652
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 357.652
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.2308226
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2434282
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.7097368
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.37779036
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.506495
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.46009642
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.62373763
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -73.069
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -77.396
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 178.975
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_Name
+      value: Partition
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14b8d9c0e3088354889b3a2828b4b353, type: 3}
 --- !u!1 &1513830663
 GameObject:
   m_ObjectHideFlags: 0
@@ -8225,22 +8371,22 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: -1
-          inSlope: 0
-          outSlope: 2
-          tangentMode: 0
+          value: 1
+          inSlope: -1
+          outSlope: -1
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 2
-          outSlope: 0
-          tangentMode: 0
+          value: 0
+          inSlope: -1
+          outSlope: -1
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -8374,7 +8520,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    remapEnabled: 0
+    remapEnabled: 1
     positionAmount:
       serializedVersion: 2
       minMaxState: 0
@@ -10341,7 +10487,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 35.35086
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -10356,7 +10502,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 32
+  field of view: 37.5
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -10551,3 +10697,5 @@ SceneRoots:
   - {fileID: 1517085290}
   - {fileID: 2068141310}
   - {fileID: 146285347}
+  - {fileID: 1327713022}
+  - {fileID: 314212869}
