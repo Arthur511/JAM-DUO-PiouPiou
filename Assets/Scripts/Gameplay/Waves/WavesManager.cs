@@ -13,8 +13,13 @@ public class WavesManager : MonoBehaviour
     readonly List<WaveInstance> _wavesToPlay = new List<WaveInstance>();
     float _timer;
 
+
+    [SerializeField] List<string> _messageList = new List<string>();
+    int _messageIndex = 0;
+
     void Awake()
     {
+        
         foreach (var data in _wavesLevel.Waves)
         {
             WaveInstance instance = new WaveInstance(data);
@@ -37,9 +42,10 @@ public class WavesManager : MonoBehaviour
             {
                 _wavesToPlay.RemoveAt(i);
                 MainGameplay.Instance.
-                StartCoroutine(MainGameplay.Instance.DisplayAnnoncement("Une nouvelle vague arrive !",
+                StartCoroutine(MainGameplay.Instance.DisplayAnnoncement(_messageList[_messageIndex],
                 MainGameplay.Instance.TextComponent,
                 MainGameplay.Instance.PanelForDisplay));
+                _messageIndex++;
             }
         }
     }

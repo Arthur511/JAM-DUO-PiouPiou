@@ -10,8 +10,6 @@ namespace Gameplay.Weapons
         [SerializeField] GameObject _prefab;
         [Range(1, 10)][SerializeField] float _radius;
 
-        
-
         GameObject go;
 
         public WeaponTimpani()
@@ -40,6 +38,7 @@ namespace Gameplay.Weapons
             {
                 if(hit.gameObject.TryGetComponent<EnemyController>(out EnemyController enemy))
                 {
+                    enemy.gameObject.GetComponent<Rigidbody>().AddForce((enemy.transform.position-player.transform.position) *20f, ForceMode.Impulse);
                     enemy.Hit(Random.Range(_damageMin, _damageMax));
                 }
             }
