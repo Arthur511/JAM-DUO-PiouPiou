@@ -6,6 +6,11 @@ public class AudioManager : MonoBehaviour
 
     AudioSource audioSource;
 
+    [Header("Weapon AudioSource")]
+    public AudioSource TriangleAudioSource;
+    public AudioSource FluteAudioSource;
+    public AudioSource TimpaniAudioSource;
+
     private void Awake()
     {
         if (instance == null)
@@ -20,9 +25,9 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
-    public void PlayASound(AudioSource source, AudioClip clip)
+    public void PlayASound(AudioSource source)
     {
-        source.PlayOneShot(clip);
+        source.Play();
     }
 
 }

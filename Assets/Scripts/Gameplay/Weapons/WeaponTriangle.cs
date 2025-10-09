@@ -5,8 +5,7 @@ namespace Gameplay.Weapons
     public class WeaponTriangle : WeaponBase
     {
 
-        [SerializeField] AudioClip _triangleSound;
-        [SerializeField] AudioSource _triangleAudioSource;
+        
         public override void Update(PlayerController player)
         {
             _timerCoolDown += Time.deltaTime;
@@ -17,7 +16,7 @@ namespace Gameplay.Weapons
 
             Collider[] hits = Physics.OverlapSphere(player.transform.position, 4);
             
-            AudioManager.instance.PlayASound(_triangleAudioSource, _triangleSound);
+            AudioManager.instance.PlayASound(AudioManager.instance.TriangleAudioSource);
 
             foreach (Collider hit in hits)
             {

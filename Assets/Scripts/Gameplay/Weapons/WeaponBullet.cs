@@ -33,24 +33,27 @@ namespace Gameplay.Weapons
             List<EnemyController> enemies = MainGameplay.Instance.GetClosestEnemy(player.transform.position, _maxProjectileInShoot);
             if (enemies == null)
                 return;
-            
+
             player.StartCoroutine(ShootEnemies(enemies, player));
 
         }
         private IEnumerator ShootEnemies(List<EnemyController> enemies, PlayerController player)
         {
-            foreach (EnemyController enemy in enemies)
+            if (enemies.Count > 0)
             {
-                var playerPosition = player.transform.position + Vector3.up;
-                Vector3 direction = enemy.transform.position - playerPosition;
-                if (direction.sqrMagnitude > 0)
+                foreach (EnemyController enemy in enemies)
                 {
-                    direction.Normalize();
-                }
-                GameObject go = GameObject.Instantiate(_prefab, playerPosition, Quaternion.identity);
-                go.GetComponent<Bullet>().Initialize(direction, GetDamage(), _speed);
+                    var playerPosition = player.transform.position + Vector3.up;
+                    Vector3 direction = enemy.transform.position - playerPosition;
+                    if (direction.sqrMagnitude > 0)
+                    {
+                        direction.Normalize();
+                    }
+                    GameObject go = GameObject.Instantiate(_prefab, playerPosition, Quaternion.identity);
+                    go.GetComponent<Bullet>().Initialize(direction, GetDamage(), _speed);
 
-                yield return new WaitForSeconds(0.2f);
+                    yield return new WaitForSeconds(0.2f);
+                }
             }
         }
     }

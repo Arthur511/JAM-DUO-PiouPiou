@@ -7,10 +7,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-
-    public GameObject _mainMenuObject;
-    public GameObject _settingsMenuObject;
-
+    public GameObject MainMenuObject;
+    public GameObject SettingsMenuObject;
 
     public void OnClickPlay()
     {
@@ -18,13 +16,13 @@ public class MainMenu : MonoBehaviour
     }
     public void OnClickOptions()
     {
-        _mainMenuObject.SetActive(false);
-        _settingsMenuObject.SetActive(true);
+        MainMenuObject.SetActive(false);
+        SettingsMenuObject.SetActive(true);
     }
     public void BackMainMenu()
     {
-        _mainMenuObject.SetActive(true);
-        _settingsMenuObject.SetActive(false);
+        MainMenuObject.SetActive(true);
+        SettingsMenuObject.SetActive(false);
     }
 
     public void OnClickQuit()

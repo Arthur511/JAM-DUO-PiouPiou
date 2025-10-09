@@ -6,8 +6,7 @@ namespace Gameplay.Weapons
         [SerializeField] GameObject _prefab;
         [Range(10, 20)][SerializeField] float _maxDistance;
 
-        [SerializeField] AudioClip _fluteSound;
-        [SerializeField] AudioSource _fluteAudioSource;
+        
 
         GameObject go;
 
@@ -30,7 +29,7 @@ namespace Gameplay.Weapons
             Quaternion orientation = Quaternion.Euler(90f, 0f, 0f);
             go = GameObject.Instantiate(_prefab, player.transform.position, direction*orientation);
 
-            AudioManager.instance.PlayASound(_fluteAudioSource, _fluteSound);
+            AudioManager.instance.PlayASound(AudioManager.instance.FluteAudioSource);
 
             go.transform.localScale = new Vector3(go.transform.localScale.x/2, go.transform.localScale.y, go.transform.localScale.z * _maxDistance);
             GameObject.Destroy(go, 0.3f);

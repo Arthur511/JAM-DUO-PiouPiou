@@ -1,7 +1,10 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// Entry point of the main gameplay
@@ -25,6 +28,7 @@ public class MainGameplay : MonoBehaviour
         GameOver
     }
 
+    
 
 
     #region Inspector
@@ -36,8 +40,9 @@ public class MainGameplay : MonoBehaviour
     [SerializeField] GameObject _prefabXp;
     [SerializeField] GameObject _superPrefabXp;
 
-    //[SerializeField] AudioSource _audioSource;
-    //[SerializeField] AudioClip _audioClip;
+    [SerializeField] GameObject _panelForDisplay;
+    [SerializeField] TextMeshProUGUI _textComponent;
+    [SerializeField] string _textToDisplay;
 
     #endregion
 
@@ -49,6 +54,8 @@ public class MainGameplay : MonoBehaviour
     public GameState State { get; private set; }
     public List<EnemyController> Enemies => _enemies;
     public GameUIManager GameUIManager => _gameUIManager;
+    public GameObject PanelForDisplay => _panelForDisplay;
+    public TextMeshProUGUI TextComponent  => _textComponent;
     //public AudioSource AudioSource => _audioSource;
     //public AudioClip AudioClip => _audioClip;
 
@@ -72,6 +79,9 @@ public class MainGameplay : MonoBehaviour
         }
 
         Instance = this;
+
+        StartCoroutine(DisplayAnnoncement(_textToDisplay, TextComponent, PanelForDisplay));
+
     }
 
     void Start()
@@ -146,6 +156,26 @@ public class MainGameplay : MonoBehaviour
         }
 
         _gameUIManager.DisplayUpgrades(randomUpgrades.ToArray());
+    }
+
+    private void DisplayMessage(string message, TextMeshProUGUI text, GameObject panel)
+    {
+        Pause();
+        text.text = message;
+        panel.SetActive(true);
+    }
+
+    private void CloseMessage(GameObject panel)
+    {
+        panel.SetActive(false);
+        UnPause();
+    }
+
+    public IEnumerator DisplayAnnoncement(string message, TextMeshProUGUI text, GameObject panel)
+    {
+        DisplayMessage(message, text, panel);
+        yield return new WaitForSecondsRealtime(3f); 
+        CloseMessage(panel);
     }
 
     void OnPlayerDeath()

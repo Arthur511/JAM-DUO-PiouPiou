@@ -33,8 +33,14 @@ public class WavesManager : MonoBehaviour
         {
             _wavesToPlay[i].Update(this,_timer);
             
-            if ( _wavesToPlay[i].IsDone)
+            if (_wavesToPlay[i].IsDone)
+            {
                 _wavesToPlay.RemoveAt(i);
+                MainGameplay.Instance.
+                StartCoroutine(MainGameplay.Instance.DisplayAnnoncement("Une nouvelle vague arrive !",
+                MainGameplay.Instance.TextComponent,
+                MainGameplay.Instance.PanelForDisplay));
+            }
         }
     }
 
