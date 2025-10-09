@@ -174,7 +174,7 @@ public class MainGameplay : MonoBehaviour
     public IEnumerator DisplayAnnoncement(string message, TextMeshProUGUI text, GameObject panel)
     {
         DisplayMessage(message, text, panel);
-        yield return new WaitForSecondsRealtime(3f); 
+        yield return new WaitForSecondsRealtime(5f); 
         CloseMessage(panel);
     }
 
