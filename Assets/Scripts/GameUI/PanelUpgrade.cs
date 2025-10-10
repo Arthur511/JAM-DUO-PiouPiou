@@ -7,7 +7,8 @@ public class PanelUpgrade : MonoBehaviour
 {
     [SerializeField] TMPro.TMP_Text TextName;
     [SerializeField] TMPro.TMP_Text TextDescription;
-    [SerializeField] Image ImageIcon;
+    //[SerializeField] Image ImageIcon;
+    [SerializeField] Button ImageButton;
 
     UpgradeData _data;
 
@@ -17,7 +18,7 @@ public class PanelUpgrade : MonoBehaviour
 
         TextName.text = data.name;
         TextDescription.text = data.Description;
-        ImageIcon.sprite = data.Sprite;
+        ImageButton.GetComponent<Image>().sprite = data.Sprite;
     }
 
     

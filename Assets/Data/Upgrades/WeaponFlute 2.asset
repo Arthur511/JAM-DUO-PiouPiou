@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponFlute 2
   m_EditorClassIdentifier: 
   _description: Flute
-  _sprite: {fileID: 21300000, guid: 82176bcef51ab6b4583f29287edb1455, type: 3}
+  _sprite: {fileID: 21300000, guid: 3d926287eb7969440a8025f68a1e0240, type: 3}
   _upgrade:
     rid: 0
   _nextUpgrades: []

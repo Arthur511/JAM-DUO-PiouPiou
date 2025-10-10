@@ -1277,8 +1277,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 415217281}
     m_Modifications:
     - target: {fileID: 488346266271503289, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488346266271503289, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 3628814072225799052, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3628814072225799052, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -1287,6 +1295,10 @@ PrefabInstance:
     - target: {fileID: 3916289866747286257, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: m_Name
       value: PanelUpgrade (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980734292764912989, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3980734292764912989, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -2130,7 +2142,7 @@ MonoBehaviour:
   m_text: '!! LevelUP !!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d1468409c1d9644eaef6d55b30338aa, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -9006125663855069845, guid: 3d1468409c1d9644eaef6d55b30338aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2790,8 +2802,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 415217281}
     m_Modifications:
     - target: {fileID: 488346266271503289, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488346266271503289, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 3628814072225799052, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3628814072225799052, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -2800,6 +2820,10 @@ PrefabInstance:
     - target: {fileID: 3916289866747286257, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: m_Name
       value: PanelUpgrade (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980734292764912989, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3980734292764912989, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -4334,9 +4358,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 415217281}
     m_Modifications:
+    - target: {fileID: 488346266271503289, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943219509235142077, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943219509235142077, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 3628814072225799052, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3916289866747286257, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: m_Name
       value: PanelUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980734292764912989, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6703858288624486308, guid: 7eec6e8989e039d428d6613ac2c6b463, type: 3}
       propertyPath: m_Type
