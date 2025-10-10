@@ -10,15 +10,14 @@ public class SettingsMenu : MonoBehaviour
     [Header("Volume Settings")]
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] Slider sliderVolume;
-    //[SerializeField] TextMeshProUGUI textVolume;
-
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("MainVolume", Mathf.Log10(volume) * 20f);
-        //int normValue = (int)((volume + 80) / (sliderVolume.maxValue + 80) * 100);
-        //textVolume.text = Convert.ToString(normValue);
+        if (volume > 0)
+            audioMixer.SetFloat("MainVolume", Mathf.Log10(volume) * 20f);
+        else
+            audioMixer.SetFloat("MainVolume", -80f);
     }
 
-    
+
 }

@@ -15,7 +15,6 @@ namespace Gameplay.Weapons
         [SerializeField] float _speed;
 
         [SerializeField] int _maxProjectileInShoot;
-        //int _currentProjectileShoot = 1;
 
         public WeaponBullet()
         {
@@ -43,7 +42,12 @@ namespace Gameplay.Weapons
             {
                 foreach (EnemyController enemy in enemies)
                 {
+
+                    if (enemy == null) continue;
+
                     var playerPosition = player.transform.position + Vector3.up;
+                    if (enemy.transform == null) continue;
+
                     Vector3 direction = enemy.transform.position - playerPosition;
                     if (direction.sqrMagnitude > 0)
                     {
