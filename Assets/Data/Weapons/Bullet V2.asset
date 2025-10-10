@@ -26,4 +26,4 @@ MonoBehaviour:
         _coolDown: 0.8
         _prefab: {fileID: 3633932044844237191, guid: 08ebc7dc14884374898f53f3510029b1, type: 3}
         _speed: 5
-        _maxProjectileInShoot: 3
+        _maxProjectileInShoot: 1

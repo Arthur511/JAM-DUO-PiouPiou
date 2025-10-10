@@ -26,19 +26,19 @@ namespace Gameplay.Weapons
             _timerCoolDown -= _coolDown;
 
             Collider[] hits = Physics.OverlapSphere(player.transform.position, _radius);
-            go = GameObject.Instantiate(_prefab, player.transform.position, Quaternion.LookRotation(Vector3.up), player.transform);
+            go = GameObject.Instantiate(_prefab, player.transform.position, Quaternion.LookRotation(Vector3.up));
 
             AudioManager.instance.PlayASound(AudioManager.instance.TimpaniAudioSource);
 
-            float diameter = _radius * 2f;
-            Vector3 spriteSize = go.GetComponent<SpriteRenderer>().sprite.bounds.size;
-            go.transform.localScale = new Vector3(diameter/spriteSize.x , diameter / spriteSize.y, 1f);
-            GameObject.Destroy(go.gameObject, 0.3f);
+
+            var radius = go.GetComponent<ParticleSystem>().main;
+            radius.startLifetime = _radius*0.1f; 
+            GameObject.Destroy(go.gameObject, 0.8f);
             foreach (Collider hit in hits)
             {
                 if(hit.gameObject.TryGetComponent<EnemyController>(out EnemyController enemy))
                 {
-                    enemy.gameObject.GetComponent<Rigidbody>().AddForce((enemy.transform.position-player.transform.position) *20f, ForceMode.Impulse);
+                    enemy.gameObject.GetComponent<Rigidbody>().AddForce((enemy.transform.position-player.transform.position) *30f, ForceMode.Impulse);
                     enemy.Hit(Random.Range(_damageMin, _damageMax));
                 }
             }

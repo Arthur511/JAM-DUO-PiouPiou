@@ -28,6 +28,8 @@ public class EnemyController : Unit
     [HideInInspector]public float CurrentTimerEnchanted;
 
 
+    [SerializeField] ParticleSystem _hitParticule;
+
     [SerializeField]EnemyMove _movementType;
     private void Awake()
     {
@@ -114,7 +116,7 @@ public class EnemyController : Unit
     public override void Hit(float damage)
     {
         _life -= damage;
-
+        ParticleManager.instance.PlayParticule(_hitParticule);
         if (Life <= 0)
         {
             Die();

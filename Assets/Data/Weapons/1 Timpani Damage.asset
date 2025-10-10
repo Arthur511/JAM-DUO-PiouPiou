@@ -24,5 +24,5 @@ MonoBehaviour:
         _damageMin: 4
         _damageMax: 6
         _coolDown: 5
-        _prefab: {fileID: 3633932044844237191, guid: 6214cd9ecfa282d4aaa4e3761d1d5d8e, type: 3}
+        _prefab: {fileID: 9177347916205526102, guid: 9bf1258ebc0db2242b0be93d148748d5, type: 3}
         _radius: 5
