@@ -6,8 +6,6 @@ namespace Gameplay.Weapons
         [SerializeField] GameObject _prefab;
         [Range(10, 20)][SerializeField] float _maxDistance;
 
-        
-
         GameObject go;
 
         public WeaponFlute()
