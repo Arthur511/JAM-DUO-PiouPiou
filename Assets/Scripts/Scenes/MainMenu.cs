@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,13 +7,20 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class MainMenu : MonoBehaviour
 {
-
     public GameObject MainMenuObject;
     public GameObject SettingsMenuObject;
 
+    public Animator Animator;
+    public GameObject FadeImage;
+
+    private void Start()
+    {
+        StartCoroutine(GoToMenu());
+    }
+
     public void OnClickPlay()
     {
-        SceneManager.LoadScene("MainGameplay");
+        StartCoroutine(GoToMainGame());
     }
     public void OnClickOptions()
     {
@@ -30,4 +38,17 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     
+    private IEnumerator GoToMainGame()
+    {
+        FadeImage.SetActive(true);
+        Animator.SetTrigger("StartGame");
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("MainGameplay");
+    }
+    private IEnumerator GoToMenu()
+    {
+        Animator.SetTrigger("StartMenu");
+        yield return new WaitForSeconds(3f);
+        FadeImage.SetActive(false);
+    }
 }

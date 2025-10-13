@@ -19,8 +19,9 @@ namespace Gameplay.Weapons
             
             AudioManager.instance.PlayASound(AudioManager.instance.TriangleAudioSource);
             GameObject go = GameObject.Instantiate(_prefab, player.transform.position, Quaternion.LookRotation(Vector3.up));
-            var radius = go.GetComponent<ParticleSystem>().shape.radius;
-            radius = _radius;
+            var radius = go.GetComponent<ParticleSystem>().shape;
+            radius.radius = _radius;
+            go.GetComponent<ParticleSystem>().Play();
             GameObject.Destroy(go.gameObject, 0.8f);
             foreach (Collider hit in hits)
             {

@@ -30,9 +30,9 @@ namespace Gameplay.Weapons
 
             AudioManager.instance.PlayASound(AudioManager.instance.TimpaniAudioSource);
 
-
             var radius = go.GetComponent<ParticleSystem>().main;
-            radius.startLifetime = _radius*0.1f; 
+            radius.startLifetime = _radius*0.1f;
+            go.GetComponent<ParticleSystem>().Play();
             GameObject.Destroy(go.gameObject, 0.8f);
             foreach (Collider hit in hits)
             {
