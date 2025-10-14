@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 /// <summary>
 /// Entry point of the main gameplay
@@ -41,6 +42,9 @@ public class MainGameplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI _textComponent;
     [SerializeField] string _textToDisplay;
 
+    [SerializeField] GameObject _videoClip;
+    [SerializeField] List<GameObject> _players = new List<GameObject>();
+
     #endregion
 
     #region Properties
@@ -52,7 +56,7 @@ public class MainGameplay : MonoBehaviour
     public List<EnemyController> Enemies => _enemies;
     public GameUIManager GameUIManager => _gameUIManager;
     public GameObject PanelForDisplay => _panelForDisplay;
-    public TextMeshProUGUI TextComponent  => _textComponent;
+    public TextMeshProUGUI TextComponent => _textComponent;
     //public AudioSource AudioSource => _audioSource;
     //public AudioClip AudioClip => _audioClip;
 
@@ -171,7 +175,7 @@ public class MainGameplay : MonoBehaviour
     public IEnumerator DisplayAnnoncement(string message, TextMeshProUGUI text, GameObject panel)
     {
         DisplayMessage(message, text, panel);
-        yield return new WaitForSecondsRealtime(3f); 
+        yield return new WaitForSecondsRealtime(3f);
         CloseMessage(panel);
     }
 
@@ -189,8 +193,21 @@ public class MainGameplay : MonoBehaviour
 
     public void OnClickQuit()
     {
+        _videoClip.GetComponent<VideoPlayer>().enabled = true;
+        StartCoroutine(FinishTheGame());
+    }
+
+    private IEnumerator FinishTheGame()
+    {
+        yield return new WaitForSeconds(0.1f);
+        foreach (GameObject go in _players)
+        {
+            go.SetActive(false);
+        }
+        yield return new WaitForSeconds(10f);
         SceneManager.LoadScene("MainMenu");
     }
+
 
     #endregion
 

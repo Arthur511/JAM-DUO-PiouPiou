@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46a8eaf7f7549014c8d97c971d54d2b0, type: 3}
-  m_Name: LifeUpgrade
+  m_Name: TriangleUpgrade
   m_EditorClassIdentifier: 
-  _description: +10% life
-  _sprite: {fileID: 21300000, guid: 204667f2269f7ee4db6f51e267b4626b, type: 3}
+  _description: Triangle makes enemies turn in circle
+  _sprite: {fileID: 21300000, guid: 5bdef454fc5efd240b00ff75cd699512, type: 3}
   _upgrade:
-    rid: 430911006346575872
+    rid: 4162988841011773850
   _nextUpgrades: []
   references:
     version: 2
     RefIds:
-    - rid: 430911006346575872
-      type: {class: LifeUpgrade, ns: , asm: Assembly-CSharp}
+    - rid: 4162988841011773850
+      type: {class: WeaponUpgrade, ns: , asm: Assembly-CSharp}
       data:
-        _multiplier: 1.1
+        _data: {fileID: 11400000, guid: 06319b53bb37bca41a45045e678e0f9f, type: 2}
