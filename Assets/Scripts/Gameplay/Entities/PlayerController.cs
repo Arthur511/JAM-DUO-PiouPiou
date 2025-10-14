@@ -20,7 +20,6 @@ public class PlayerController : Unit
     public Action<int> OnLevelUp { get; set; }
     public List<UpgradeData> UpgradesAvailable { get; private set; }
 
-
     public Vector2 Direction => _lastDirection;
     public float DirectionX => _lastDirectionX;
     public PlayerData PlayerData => _playerData;
@@ -34,7 +33,8 @@ public class PlayerController : Unit
     int _level = 1;
     int _xp = 0;
     
-
+    public bool IsHit;
+    
     bool _isDead;
     Rigidbody _rb;
     Vector3 _inputs;
@@ -59,7 +59,6 @@ public class PlayerController : Unit
             AddWeapon(weapon.Weapon,weapon.SlotIndex);
         }
     }
-
     void Update()
     {
         if (_isDead)
@@ -87,7 +86,6 @@ public class PlayerController : Unit
 
         _inputs = new Vector3(horizontal, 0, vertical);
     }
-
 
     void FixedUpdate()
     {
@@ -128,7 +126,6 @@ public class PlayerController : Unit
 
     protected void Rotation()
     {
-        // change l'angle (rotation)
         _targetRotation = Quaternion.LookRotation(_inputs, Vector3.up);
         transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _speedRotation * Time.deltaTime);
     }

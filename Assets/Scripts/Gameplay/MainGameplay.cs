@@ -28,9 +28,6 @@ public class MainGameplay : MonoBehaviour
         GameOver
     }
 
-    
-
-
     #region Inspector
 
     [SerializeField] PlayerController _player;

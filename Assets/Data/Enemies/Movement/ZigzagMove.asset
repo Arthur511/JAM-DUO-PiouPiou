@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c517072e64132c4eb2e55f9cef2c526, type: 3}
   m_Name: ZigzagMove
   m_EditorClassIdentifier: 
-  _frequence: 1.5
-  _amplitude: 3
+  _frequence: 1.25
+  _amplitude: 4

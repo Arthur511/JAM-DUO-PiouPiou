@@ -16,5 +16,5 @@ MonoBehaviour:
   _damagePerSeconds: 20
   _maxSpeed: 2
   _minSpeed: 3
-  _prefab: {fileID: 7654918703708801626, guid: d40f85fe73138fe43a2bfe38bdd7dcb1, type: 3}
+  _prefab: {fileID: 7654918703708801626, guid: dfa4f7b3cd25dd848b10785735cf8610, type: 3}
   _spriteOverride: {fileID: 0}

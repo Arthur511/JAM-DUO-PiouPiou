@@ -147,7 +147,10 @@ public class EnemyController : Unit
         if (other != null)
         {
             if (_playersInTrigger.Contains(other) == false)
+            {
                 _playersInTrigger.Add(other);
+                other.IsHit = true;
+            }
         }
     }
 
@@ -158,7 +161,10 @@ public class EnemyController : Unit
         if (other != null)
         {
             if (_playersInTrigger.Contains(other))
+            {
                 _playersInTrigger.Remove(other);
+                other.IsHit = false;
+            }
         }
     }
 }
