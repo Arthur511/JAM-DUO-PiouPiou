@@ -14,6 +14,7 @@ public class PlayerController : Unit
     [SerializeField] LevelUpData _levelUpData;
 
     [SerializeField] LifeBar _lifeBar;
+    [SerializeField]Animator _playerAnimator;
 
     public Action OnDeath { get; set; }
     public Action<int, int, int> OnXP { get; set; }
@@ -41,7 +42,6 @@ public class PlayerController : Unit
     Vector3 _lastDirection = Vector3.right;
     float _lastDirectionX = 1;
     List<WeaponBase> _weapons = new List<WeaponBase>();
-
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -109,6 +109,7 @@ public class PlayerController : Unit
     {
         if (_inputs.sqrMagnitude > 0)
         {
+            _playerAnimator.SetBool("IsWalking", true);
             _inputs.Normalize();
             _rb.linearVelocity = _inputs * _playerData.MoveSpeed;
             
@@ -120,6 +121,7 @@ public class PlayerController : Unit
         else
         {
             _rb.linearVelocity = new Vector2();
+            _playerAnimator.SetBool("IsWalking", false);
         }
     }
 

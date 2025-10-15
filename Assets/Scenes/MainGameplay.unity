@@ -541,7 +541,6 @@ MonoBehaviour:
   - {fileID: 2031811155}
   - {fileID: 2093339967}
   - {fileID: 1800265272}
-  - {fileID: 439869239}
 --- !u!4 &133957340
 Transform:
   m_ObjectHideFlags: 0
@@ -2102,7 +2101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27b537010019f847a27f04fdd931ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 8558927974499608465}
+  _target: {fileID: 0}
   _speed: 0.3
   _topRight: {fileID: 1302784119}
   _bottomLeft: {fileID: 1323277590}
@@ -9324,51 +9323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &2930661316017310352
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8558927974499608465}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: cfad8c1a331ba4b49b70853a1e9ff2fa, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2953021703238640426
 GameObject:
   m_ObjectHideFlags: 0
@@ -10231,7 +10185,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
+  m_AnimatePhysics: 1
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -11186,6 +11140,7 @@ MonoBehaviour:
   _playerData: {fileID: 11400000, guid: b490d34c1b70df546a5ecca04aaa0cf9, type: 2}
   _levelUpData: {fileID: 11400000, guid: b53a9205d0857e44fb835c421f87f376, type: 2}
   _lifeBar: {fileID: 1182792372026974664}
+  _playerAnimator: {fileID: 5672040906231162279}
   IsHit: 0
 --- !u!4 &7449747777762322864
 Transform:
@@ -11612,7 +11567,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1132113421475885955}
   - component: {fileID: 1501814182763190067}
-  - component: {fileID: 2930661316017310352}
   - component: {fileID: 7487803892437016747}
   - component: {fileID: 7440376937859126280}
   - component: {fileID: 787460049722600877}
