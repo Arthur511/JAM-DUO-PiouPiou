@@ -4886,6 +4886,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7125559475087569085, guid: 8448d493abb58a844ada6018d25ac525, type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125559475087569085, guid: 8448d493abb58a844ada6018d25ac525, type: 3}
+      propertyPath: NoiseModule.frequency
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125559475087569085, guid: 8448d493abb58a844ada6018d25ac525, type: 3}
+      propertyPath: NoiseModule.remapEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125559475087569085, guid: 8448d493abb58a844ada6018d25ac525, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125559475087569085, guid: 8448d493abb58a844ada6018d25ac525, type: 3}
+      propertyPath: NoiseModule.remap.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125559475087569085, guid: 8448d493abb58a844ada6018d25ac525, type: 3}
+      propertyPath: NoiseModule.remap.maxCurve.m_Curve.Array.data[1].value
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125559475087569085, guid: 8448d493abb58a844ada6018d25ac525, type: 3}
+      propertyPath: NoiseModule.remap.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125559475087569085, guid: 8448d493abb58a844ada6018d25ac525, type: 3}
+      propertyPath: NoiseModule.remap.maxCurve.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
