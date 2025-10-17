@@ -13,7 +13,7 @@ public abstract class WeaponBase
     [SerializeField] protected float _speed;
     [SerializeField] protected float _range;
     [SerializeField] protected GameObject _weaponPrefab;
-    [SerializeField] public int _maxProjectileInShoot;
+    [SerializeField] protected int _maxProjectileInShoot;
 
     public int Slot { get; private set; }
 

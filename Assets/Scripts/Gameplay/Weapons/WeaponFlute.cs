@@ -19,10 +19,8 @@ namespace Gameplay.Weapons
             _timerCoolDown -= _coolDown;
 
             RaycastHit[] hits = Physics.RaycastAll(player.transform.position, (player.transform.forward).normalized, _range);
-            //Debug.DrawRay(player.transform.position, (player.transform.forward).normalized * _maxDistance, Color.red, 0.5f);
 
             Quaternion direction = Quaternion.LookRotation(player.transform.forward, Vector3.forward);
-            //Quaternion orientation = Quaternion.Euler(90f, 0f, 0f);
             go = GameObject.Instantiate(_weaponPrefab, player.transform.position + direction*player.transform.forward, direction);
             var radius = go.GetComponent<ParticleSystem>().main;
             radius.startLifetime = _range * 0.05f;

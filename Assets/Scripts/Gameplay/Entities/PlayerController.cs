@@ -157,7 +157,6 @@ public class PlayerController : Unit
     internal void AddWeapon(WeaponBase weapon, int slot)
     {
         weapon.Initialize(slot);
-        Debug.Log(weapon._maxProjectileInShoot);
         Weapons.Add(weapon);
     }
 
