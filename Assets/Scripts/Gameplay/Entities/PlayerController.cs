@@ -24,7 +24,6 @@ public class PlayerController : Unit
     public Vector2 Direction => _lastDirection;
     public float DirectionX => _lastDirectionX;
     public PlayerData PlayerData => _playerData;
-
     public List<WeaponBase> Weapons => _weapons;
 
     float _speedRotation = 10;
@@ -56,7 +55,7 @@ public class PlayerController : Unit
 
         foreach (var weapon in _playerData.Weapons)
         {
-            //AddWeapon(weapon.Weapon,weapon.SlotIndex);
+            AddWeapon(weapon.Weapon,weapon.SlotIndex);
         }
     }
     void Update()
@@ -151,18 +150,14 @@ public class PlayerController : Unit
     internal void UnlockUpgrade(UpgradeData data)
     {
         UpgradesAvailable.Remove(data);
-
         UpgradesAvailable.AddRange(data.NextUpgrades);
     }
 
 
-    public void AddWeapon(WeaponData data , int slot)
+    internal void AddWeapon(WeaponBase weapon, int slot)
     {
-        var weaponPrefab = data.Weapon;
-        var instance = Instantiate(weaponPrefab.GameObject, transform);
-        var weapon = instance.GetComponent<WeaponBase>();
-        //weapon.Slot = slot;
-        weapon.Initialize(data);
+        weapon.Initialize(slot);
+        Debug.Log(weapon._maxProjectileInShoot);
         Weapons.Add(weapon);
     }
 

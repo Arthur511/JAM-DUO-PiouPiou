@@ -23,7 +23,8 @@ MonoBehaviour:
       data:
         _damageMin: 10
         _damageMax: 12
-        _coolDown: 0.6
-        _prefab: {fileID: 3633932044844237191, guid: 08ebc7dc14884374898f53f3510029b1, type: 3}
-        _speed: 5
+        _coolDown: 0.7
+        _speed: 6
+        _radius: 0
+        _weaponPrefab: {fileID: 3633932044844237191, guid: 08ebc7dc14884374898f53f3510029b1, type: 3}
         _maxProjectileInShoot: 3

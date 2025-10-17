@@ -4,21 +4,25 @@ using UnityEngine;
 
 namespace Gameplay.Weapons
 {
-
     /// <summary>
-    /// Represents a weapon that shot one bullet at a time to the closest enemy
+    /// Represents a weapon that shot one or many bullets at a time to the closest enemies
     /// </summary>
     public class WeaponBullet : WeaponBase
     {
-
-        [SerializeField] GameObject _prefab;
-        [SerializeField] float _speed;
-
-        [SerializeField] int _maxProjectileInShoot;
-
         public WeaponBullet()
         {
         }
+
+        /*public override void Initialize(int Slot)
+        {
+            base.Initialize(Slot);
+
+            _prefab = bulletData.Prefab;
+            _speed = bulletData.Speed;
+            _maxProjectileInShoot = bulletData.MaxProjectileInShoot;
+            
+        }*/
+
 
         public override void Update(PlayerController player)
         {
@@ -30,7 +34,6 @@ namespace Gameplay.Weapons
             _timerCoolDown -= _coolDown;
 
             List<EnemyController> enemies = MainGameplay.Instance.GetClosestEnemy(player.transform.position, _maxProjectileInShoot);
-            Debug.Log(enemies.Count);
             if (enemies == null)
                 return;
 
@@ -54,7 +57,7 @@ namespace Gameplay.Weapons
                     {
                         direction.Normalize();
                     }
-                    GameObject go = GameObject.Instantiate(_prefab, playerPosition, Quaternion.identity);
+                    GameObject go = GameObject.Instantiate(_weaponPrefab, playerPosition, Quaternion.identity);
                     go.GetComponent<Bullet>().Initialize(direction, GetDamage(), _speed);
 
                     yield return new WaitForSeconds(0.2f);

@@ -24,5 +24,7 @@ MonoBehaviour:
         _damageMin: 4
         _damageMax: 6
         _coolDown: 5
-        _prefab: {fileID: 9177347916205526102, guid: 9bf1258ebc0db2242b0be93d148748d5, type: 3}
-        _radius: 6
+        _speed: 0
+        _range: 5
+        _weaponPrefab: {fileID: 9177347916205526102, guid: 9bf1258ebc0db2242b0be93d148748d5, type: 3}
+        _maxProjectileInShoot: 0

@@ -7,8 +7,6 @@ namespace Gameplay.Weapons
 
     public class WeaponTimpani : WeaponBase
     {
-        [SerializeField] GameObject _prefab;
-        [Range(1, 10)][SerializeField] float _radius;
 
         GameObject go;
 
@@ -17,8 +15,7 @@ namespace Gameplay.Weapons
             
         }
 
-
-        public override void Initialize(WeaponData data)
+        /*public override void Initialize(WeaponData data)
         {
             base.Initialize(data);
 
@@ -27,7 +24,7 @@ namespace Gameplay.Weapons
                 _radius = timpaniData.Radius;
                 _prefab = timpaniData.Prefab;
             }
-        }
+        }*/
 
         public override void Update(PlayerController player)
         {
@@ -37,13 +34,13 @@ namespace Gameplay.Weapons
 
             _timerCoolDown -= _coolDown;
 
-            Collider[] hits = Physics.OverlapSphere(player.transform.position, _radius);
-            go = GameObject.Instantiate(_prefab, player.transform.position, Quaternion.LookRotation(Vector3.up));
+            Collider[] hits = Physics.OverlapSphere(player.transform.position, _range);
+            go = GameObject.Instantiate(_weaponPrefab, player.transform.position, Quaternion.LookRotation(Vector3.up));
 
             AudioManager.instance.PlayASound(AudioManager.instance.TimpaniAudioSource);
 
             var radius = go.GetComponent<ParticleSystem>().main;
-            radius.startLifetime = _radius*0.1f;
+            radius.startLifetime = _range*0.1f;
             go.GetComponent<ParticleSystem>().Play();
             GameObject.Destroy(go.gameObject, 0.8f);
             foreach (Collider hit in hits)

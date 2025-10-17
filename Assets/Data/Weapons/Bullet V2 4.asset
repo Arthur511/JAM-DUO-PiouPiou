@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fca8c8437b00b3a4ca793e4e5492b008, type: 3}
-  m_Name: Bullet V2
+  m_Name: Bullet V2 4
   m_EditorClassIdentifier: 
   _weapon:
     rid: 0
@@ -21,10 +21,10 @@ MonoBehaviour:
     - rid: 0
       type: {class: WeaponBullet, ns: Gameplay.Weapons, asm: Assembly-CSharp}
       data:
-        _damageMin: 8
-        _damageMax: 9
-        _coolDown: 1
-        _speed: 7
+        _damageMin: 10.5
+        _damageMax: 13
+        _coolDown: 0.7
+        _speed: 5
         _radius: 0
         _weaponPrefab: {fileID: 3633932044844237191, guid: 08ebc7dc14884374898f53f3510029b1, type: 3}
-        _maxProjectileInShoot: 1
+        _maxProjectileInShoot: 3

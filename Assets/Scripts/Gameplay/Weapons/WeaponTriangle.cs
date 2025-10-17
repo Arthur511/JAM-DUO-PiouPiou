@@ -4,8 +4,6 @@ namespace Gameplay.Weapons
 {
     public class WeaponTriangle : WeaponBase
     {
-        [SerializeField] GameObject _prefab;
-        [Range(1, 10)][SerializeField] float _radius;
 
         public override void Update(PlayerController player)
         {
@@ -15,12 +13,12 @@ namespace Gameplay.Weapons
 
             _timerCoolDown -= _coolDown;
 
-            Collider[] hits = Physics.OverlapSphere(player.transform.position, _radius);
+            Collider[] hits = Physics.OverlapSphere(player.transform.position, _range);
             
             AudioManager.instance.PlayASound(AudioManager.instance.TriangleAudioSource);
-            GameObject go = GameObject.Instantiate(_prefab, player.transform.position, Quaternion.LookRotation(Vector3.up));
+            GameObject go = GameObject.Instantiate(_weaponPrefab, player.transform.position, Quaternion.LookRotation(Vector3.up));
             var radius = go.GetComponent<ParticleSystem>().shape;
-            radius.radius = _radius;
+            radius.radius = _range;
             go.GetComponent<ParticleSystem>().Play();
             GameObject.Destroy(go.gameObject, 0.8f);
             foreach (Collider hit in hits)

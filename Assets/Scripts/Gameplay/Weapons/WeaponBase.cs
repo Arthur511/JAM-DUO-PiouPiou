@@ -10,23 +10,24 @@ public abstract class WeaponBase
     [SerializeField] protected float _damageMin;
     [SerializeField] protected float _damageMax;
     [SerializeField] protected float _coolDown;
-    
+    [SerializeField] protected float _speed;
+    [SerializeField] protected float _range;
+    [SerializeField] protected GameObject _weaponPrefab;
+    [SerializeField] public int _maxProjectileInShoot;
+
     public int Slot { get; private set; }
-    public GameObject GameObject {  get; private set; }
-    
+
     protected float _timerCoolDown;
- 
-    public virtual void Initialize(WeaponData data)
+
+    public void Initialize(int slot)
     {
-        _damageMax = data.Weapon._damageMax;
-        _damageMax = data.Weapon._damageMin;
-        _damageMax = data.Weapon._coolDown;
+        Slot = slot;
     }
 
     protected float GetDamage()
     {
         return Random.Range(_damageMin, _damageMax);
     }
-    
+
     public abstract void Update(PlayerController player);
 }
