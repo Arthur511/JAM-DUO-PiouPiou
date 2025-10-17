@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.UI;
 
 /// <summary>
 /// Manages the waves : stores the data, updates and plays them 
@@ -19,7 +20,7 @@ public class WavesManager : MonoBehaviour
 
     void Awake()
     {
-        
+
         foreach (var data in _wavesLevel.Waves)
         {
             WaveInstance instance = new WaveInstance(data);
@@ -31,21 +32,24 @@ public class WavesManager : MonoBehaviour
     {
         if (MainGameplay.Instance.State != MainGameplay.GameState.Gameplay)
             return;
-        
+
         _timer += Time.deltaTime;
 
         for (int i = _wavesToPlay.Count - 1; i >= 0; i--)
         {
-            _wavesToPlay[i].Update(this,_timer);
-            
+            _wavesToPlay[i].Update(this, _timer);
+
             if (_wavesToPlay[i].IsDone)
             {
+                if (_wavesToPlay[i].WaveData.CanDisplayMessage == true)
+                {
+                    MainGameplay.Instance.
+                    StartCoroutine(MainGameplay.Instance.DisplayAnnoncement(_messageList[_messageIndex],
+                    MainGameplay.Instance.TextComponent,
+                    MainGameplay.Instance.PanelForDisplay));
+                    _messageIndex++;
+                }
                 _wavesToPlay.RemoveAt(i);
-                MainGameplay.Instance.
-                StartCoroutine(MainGameplay.Instance.DisplayAnnoncement(_messageList[_messageIndex],
-                MainGameplay.Instance.TextComponent,
-                MainGameplay.Instance.PanelForDisplay));
-                _messageIndex++;
             }
         }
     }
@@ -62,9 +66,9 @@ public class WavesManager : MonoBehaviour
             spawnPosition.z = Mathf.Clamp(spawnPosition.z, _bottomLeft.position.z, _topRight.position.z);
 
             GameObject go = GameObject.Instantiate(data.Enemy.Prefab, spawnPosition, Quaternion.identity);
-            
+
             var enemy = go.GetComponent<EnemyController>();
-            enemy.Initialize(MainGameplay.Instance.Player.gameObject , data.Enemy);
+            enemy.Initialize(MainGameplay.Instance.Player.gameObject, data.Enemy);
             MainGameplay.Instance.Enemies.Add(enemy);
         }
     }

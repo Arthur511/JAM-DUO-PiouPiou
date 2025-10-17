@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46a8eaf7f7549014c8d97c971d54d2b0, type: 3}
-  m_Name: WeaponBullet2
+  m_Name: Life Upgrade 1
   m_EditorClassIdentifier: 
-  _description: Bullet level 2
-  _sprite: {fileID: 21300000, guid: f076a7d53dda96d408627642bf50f5f8, type: 3}
+  _description: +10% life
+  _sprite: {fileID: 21300000, guid: 204667f2269f7ee4db6f51e267b4626b, type: 3}
   _upgrade:
-    rid: 0
-  _nextUpgrades: []
+    rid: 430911006346575872
+  _nextUpgrades:
+  - {fileID: 11400000, guid: 50d25844b21e2794a9d13f0ed3e0c5a1, type: 2}
   references:
     version: 2
     RefIds:
-    - rid: 0
-      type: {class: WeaponUpgrade, ns: , asm: Assembly-CSharp}
+    - rid: 430911006346575872
+      type: {class: LifeUpgrade, ns: , asm: Assembly-CSharp}
       data:
-        _data: {fileID: 11400000, guid: 4526b650c7f3f4a4c9a5418d51ed5195, type: 2}
+        _multiplier: 1.1

@@ -17,6 +17,18 @@ namespace Gameplay.Weapons
             
         }
 
+
+        public override void Initialize(WeaponData data)
+        {
+            base.Initialize(data);
+
+            if (data is WeaponTimpaniData timpaniData)
+            {
+                _radius = timpaniData.Radius;
+                _prefab = timpaniData.Prefab;
+            }
+        }
+
         public override void Update(PlayerController player)
         {
             _timerCoolDown += Time.deltaTime;

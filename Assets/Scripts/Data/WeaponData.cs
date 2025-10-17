@@ -8,7 +8,9 @@ public class WeaponData : ScriptableObject
 {
     [SerializeReference] [Instantiable(  type: typeof(WeaponBase))] WeaponBase _weapon;
     [SerializeField] private int _slotIndex;
+    [SerializeField] private GameObject gameObject;
 
     public WeaponBase Weapon => _weapon;
     public int SlotIndex => _slotIndex;
+    public GameObject GameObject => gameObject;
 }

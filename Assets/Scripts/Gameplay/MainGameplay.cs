@@ -41,9 +41,13 @@ public class MainGameplay : MonoBehaviour
     [SerializeField] GameObject _panelForDisplay;
     [SerializeField] TextMeshProUGUI _textComponent;
     [SerializeField] string _textToDisplay;
+    [SerializeField] float _timeDisplayIntertitle;
 
     [SerializeField] GameObject _videoClip;
     [SerializeField] List<GameObject> _players = new List<GameObject>();
+
+    [SerializeField] Image _imageStrobInterTitle;
+
 
     #endregion
 
@@ -57,8 +61,6 @@ public class MainGameplay : MonoBehaviour
     public GameUIManager GameUIManager => _gameUIManager;
     public GameObject PanelForDisplay => _panelForDisplay;
     public TextMeshProUGUI TextComponent => _textComponent;
-    //public AudioSource AudioSource => _audioSource;
-    //public AudioClip AudioClip => _audioClip;
 
     #endregion
 
@@ -67,6 +69,8 @@ public class MainGameplay : MonoBehaviour
     readonly List<EnemyController> _enemies = new List<EnemyController>();
     float _timerIncrement;
     int _timerSeconds;
+
+    Color _color;
 
     #endregion
 
@@ -80,7 +84,7 @@ public class MainGameplay : MonoBehaviour
         }
 
         Instance = this;
-
+        _color = _imageStrobInterTitle.color;
         StartCoroutine(DisplayAnnoncement(_textToDisplay, TextComponent, PanelForDisplay));
 
     }
@@ -175,8 +179,19 @@ public class MainGameplay : MonoBehaviour
     public IEnumerator DisplayAnnoncement(string message, TextMeshProUGUI text, GameObject panel)
     {
         DisplayMessage(message, text, panel);
-        yield return new WaitForSecondsRealtime(3f);
+        StartCoroutine(DisplayStroboscopic());
+        yield return new WaitForSecondsRealtime(_timeDisplayIntertitle);
         CloseMessage(panel);
+    }
+
+    public IEnumerator DisplayStroboscopic()
+    {
+        for (int i = 0; i <= _timeDisplayIntertitle/0.05; i++)
+        {
+            _color.a = Random.Range(0.001f, 0.01f);
+            _imageStrobInterTitle.color = _color;
+            yield return new WaitForSecondsRealtime(0.05f);
+        }
     }
 
     void OnPlayerDeath()

@@ -12,14 +12,15 @@ public abstract class WeaponBase
     [SerializeField] protected float _coolDown;
     
     public int Slot { get; private set; }
+    public GameObject GameObject {  get; private set; }
     
     protected float _timerCoolDown;
-    
-    
-
-    public void Initialize(int slot)
+ 
+    public virtual void Initialize(WeaponData data)
     {
-        Slot = slot;
+        _damageMax = data.Weapon._damageMax;
+        _damageMax = data.Weapon._damageMin;
+        _damageMax = data.Weapon._coolDown;
     }
 
     protected float GetDamage()

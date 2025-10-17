@@ -21,9 +21,9 @@ public class EnemyController : Unit
     [Header("Enchantment")]
     public bool IsBewitch = false;
     private Vector3 _bewitchCenter;
-    private float _bewitchRadius = 2f;
+    private float _bewitchRadius = 1f;
     private float _bewitchAngle = 0f;
-    private float _bewitchSpeed = 180f;
+    private float _bewitchSpeed = 135f;
     [HideInInspector]public float TimerEnchanted = 3f;
     [HideInInspector]public float CurrentTimerEnchanted;
 

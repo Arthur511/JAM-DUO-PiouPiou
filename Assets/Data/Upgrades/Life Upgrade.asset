@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46a8eaf7f7549014c8d97c971d54d2b0, type: 3}
-  m_Name: LifeUpgrade
+  m_Name: Life Upgrade
   m_EditorClassIdentifier: 
   _description: +10% life
   _sprite: {fileID: 21300000, guid: 204667f2269f7ee4db6f51e267b4626b, type: 3}
   _upgrade:
     rid: 430911006346575872
-  _nextUpgrades: []
+  _nextUpgrades:
+  - {fileID: 11400000, guid: fc4eebc3693259e4cadc453a98c797fe, type: 2}
   references:
     version: 2
     RefIds:

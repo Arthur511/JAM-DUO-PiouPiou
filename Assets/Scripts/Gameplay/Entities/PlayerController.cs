@@ -156,9 +156,13 @@ public class PlayerController : Unit
     }
 
 
-    internal void AddWeapon(WeaponBase weapon , int slot)
+    public void AddWeapon(WeaponData data , int slot)
     {
-        weapon.Initialize(slot);
+        var weaponPrefab = data.Weapon;
+        var instance = Instantiate(weaponPrefab.GameObject, transform);
+        var weapon = instance.GetComponent<WeaponBase>();
+        //weapon.Slot = slot;
+        weapon.Initialize(data);
         Weapons.Add(weapon);
     }
 

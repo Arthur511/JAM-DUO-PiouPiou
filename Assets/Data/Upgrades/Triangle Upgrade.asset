@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46a8eaf7f7549014c8d97c971d54d2b0, type: 3}
-  m_Name: TriangleUpgrade
+  m_Name: Triangle Upgrade
   m_EditorClassIdentifier: 
   _description: Triangle makes enemies turn in circle
   _sprite: {fileID: 21300000, guid: 5bdef454fc5efd240b00ff75cd699512, type: 3}

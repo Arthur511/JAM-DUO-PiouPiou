@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46a8eaf7f7549014c8d97c971d54d2b0, type: 3}
-  m_Name: WeaponTimpani 1
+  m_Name: Life Upgrade 2
   m_EditorClassIdentifier: 
-  _description: Thunder damage increase !
-  _sprite: {fileID: 21300000, guid: 265d6a07ed5219d41aaa43f36e1753f0, type: 3}
+  _description: +20% life
+  _sprite: {fileID: 21300000, guid: 204667f2269f7ee4db6f51e267b4626b, type: 3}
   _upgrade:
-    rid: 0
-  _nextUpgrades:
-  - {fileID: 11400000, guid: c49ea83b20486304e990ed05debb16d7, type: 2}
+    rid: 430911006346575872
+  _nextUpgrades: []
   references:
     version: 2
     RefIds:
-    - rid: 0
-      type: {class: WeaponUpgrade, ns: , asm: Assembly-CSharp}
+    - rid: 430911006346575872
+      type: {class: LifeUpgrade, ns: , asm: Assembly-CSharp}
       data:
-        _data: {fileID: 11400000, guid: 1e1f98c1673b5a64bbd04b3981d084ba, type: 2}
+        _multiplier: 1.2

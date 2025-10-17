@@ -24,6 +24,7 @@ public class WaveData
     public EnemyData Enemy => _enemy;
     public MoveType MovementType => _movementType;
     public float SpawnDistance => _spawnDistance;
+    public bool CanDisplayMessage => _canDisplayMessage;
 
     [SerializeField] int _timeToStart;
     [SerializeField] int _timesToRepeat = 1;
@@ -32,4 +33,5 @@ public class WaveData
     [SerializeField] EnemyData _enemy;
     [SerializeField] MoveType _movementType;
     [SerializeField] float _spawnDistance = 15;
+    [SerializeField] bool _canDisplayMessage = false;
 }

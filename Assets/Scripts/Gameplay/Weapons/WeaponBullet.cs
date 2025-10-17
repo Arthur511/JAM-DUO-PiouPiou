@@ -30,6 +30,7 @@ namespace Gameplay.Weapons
             _timerCoolDown -= _coolDown;
 
             List<EnemyController> enemies = MainGameplay.Instance.GetClosestEnemy(player.transform.position, _maxProjectileInShoot);
+            Debug.Log(enemies.Count);
             if (enemies == null)
                 return;
 

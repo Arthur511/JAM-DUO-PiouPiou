@@ -15,7 +15,6 @@ public class PanelUpgrade : MonoBehaviour
     public void Initialize(UpgradeData data)
     {
         _data = data;
-
         TextName.text = data.name;
         TextDescription.text = data.Description;
         ImageButton.GetComponent<Image>().sprite = data.Sprite;

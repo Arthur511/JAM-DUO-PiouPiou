@@ -1,3 +1,4 @@
+using UnityEditor.Overlays;
 using UnityEngine;
 
 /// <summary>
@@ -6,20 +7,22 @@ using UnityEngine;
 /// </summary>
 public class WaveInstance
 {
-    public bool IsDone => _currentOccurence >= _data.TimesToRepeat;
+    public bool IsDone => _currentOccurence >= _waveData.TimesToRepeat;
     
-    WaveData _data;
+    public WaveData WaveData => _waveData;
+
+    WaveData _waveData;
     float _timer;
     int _currentOccurence;
 
     public WaveInstance(WaveData data)
     {
-        _data = data;
+        _waveData = data;
     }
 
     public void Update( WavesManager manager, float currentTimer)
     {
-        if (_data.TimeToStart > currentTimer)     
+        if (_waveData.TimeToStart > currentTimer)     
             return;
 
         _timer -= Time.deltaTime;
@@ -27,9 +30,9 @@ public class WaveInstance
         if (_timer <= 0)
         {
             _currentOccurence++;
-            _timer = _data.RepeatTimer;
+            _timer = _waveData.RepeatTimer;
 
-            manager.Spawn(_data);
+            manager.Spawn(_waveData);
         }
 
     }
