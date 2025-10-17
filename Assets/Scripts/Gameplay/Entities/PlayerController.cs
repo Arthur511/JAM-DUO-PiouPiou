@@ -56,7 +56,7 @@ public class PlayerController : Unit
 
         foreach (var weapon in _playerData.Weapons)
         {
-            AddWeapon(weapon.Weapon,weapon.SlotIndex);
+            //AddWeapon(weapon.Weapon,weapon.SlotIndex);
         }
     }
     void Update()
