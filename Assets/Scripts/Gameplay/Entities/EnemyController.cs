@@ -127,13 +127,15 @@ public class EnemyController : Unit
     {
         MainGameplay.Instance.Enemies.Remove(this);
         GameObject.Destroy(gameObject);
+        MainGameplay.Instance.Player.IsHit = false;
         var xp = GameObject.Instantiate(MainGameplay.Instance.PrefabXP, transform.position, Quaternion.identity);
         xp.GetComponent<CollectableXp>().Initialize(1);
+
     }
     public void DieFromFlute()
     {
         MainGameplay.Instance.Enemies.Remove(this);
-        //MainGameplay.Instance.AudioSource.PlayOneShot(MainGameplay.Instance.AudioClip);
+        MainGameplay.Instance.Player.IsHit = false;
         GameObject.Destroy(gameObject);
         var xp = GameObject.Instantiate(MainGameplay.Instance.SuperPrefabXP, transform.position, Quaternion.identity);
         xp.GetComponent<CollectableXp>().Initialize(5);

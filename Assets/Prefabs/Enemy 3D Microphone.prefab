@@ -53,7 +53,7 @@ MonoBehaviour:
   TimerEnchanted: 3
   CurrentTimerEnchanted: 0
   _hitParticule: {fileID: 1696181870510058782}
-  _movementType: {fileID: 11400000, guid: 747378b3eda9c3748a88c0585eb6fd44, type: 2}
+  _movementType: {fileID: 11400000, guid: 90971819a9a8fc34a9019d896664a2ba, type: 2}
 --- !u!136 &4140029576336241063
 CapsuleCollider:
   m_ObjectHideFlags: 0

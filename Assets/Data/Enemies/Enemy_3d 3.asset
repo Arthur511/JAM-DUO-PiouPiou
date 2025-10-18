@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: 4
   _damagePerSeconds: 3
-  _maxSpeed: 4
-  _minSpeed: 4
+  _maxSpeed: 50
+  _minSpeed: 50
   _prefab: {fileID: 5824785968921548194, guid: 18326dc3e789950488a2aec4580784ba, type: 3}
   _spriteOverride: {fileID: 0}

@@ -5674,7 +5674,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.478
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -18234,7 +18234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 50563239523828694, guid: 0f36e4d70ed5b614c821cb5a8db25167, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 50563239523828694, guid: 0f36e4d70ed5b614c821cb5a8db25167, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -19678,11 +19678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4974767078173799823, guid: c32b6db7b6649b846b5c3f6a731dd8c6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 4974767078173799823, guid: c32b6db7b6649b846b5c3f6a731dd8c6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -40.3
+      value: -40.300003
       objectReference: {fileID: 0}
     - target: {fileID: 4974767078173799823, guid: c32b6db7b6649b846b5c3f6a731dd8c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -20696,6 +20696,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 133957339}
+    - target: {fileID: 7167110715841366104, guid: cae4d37c021d385429ef7a34e7079b5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickQuit
+      objectReference: {fileID: 0}
     - target: {fileID: 7167110715841366105, guid: cae4d37c021d385429ef7a34e7079b5f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0849198

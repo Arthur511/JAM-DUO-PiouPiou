@@ -21,8 +21,8 @@ MonoBehaviour:
     - rid: 5168253336096079931
       type: {class: WeaponTimpani, ns: Gameplay.Weapons, asm: Assembly-CSharp}
       data:
-        _damageMin: 3
-        _damageMax: 5
+        _damageMin: 2
+        _damageMax: 3
         _coolDown: 5
         _speed: 0
         _range: 5

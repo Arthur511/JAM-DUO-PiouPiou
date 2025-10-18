@@ -218,11 +218,11 @@ public class MainGameplay : MonoBehaviour
     private IEnumerator FinishTheGame()
     {
         yield return new WaitForSeconds(0.1f);
+        AudioManager.instance.GetComponent<AudioSource>().volume-= Time.time;
         foreach (GameObject go in _players)
         {
             go.SetActive(false);
         }
-        AudioManager.instance.GetComponent<AudioSource>().volume-= Time.deltaTime;
         yield return new WaitForSeconds(10f);
         SceneManager.LoadScene("MainMenu");
     }

@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46a8eaf7f7549014c8d97c971d54d2b0, type: 3}
-  m_Name: Trumpet Bullet Upgrade 4
+  m_Name: Trumpet Upgrade
   m_EditorClassIdentifier: 
-  _description: Bullet level 4
+  _description: Bullet level 2
   _sprite: {fileID: 21300000, guid: f076a7d53dda96d408627642bf50f5f8, type: 3}
   _upgrade:
     rid: 0
-  _nextUpgrades: []
+  _nextUpgrades:
+  - {fileID: 11400000, guid: 9a1861617afe243498bff7f7c167c24a, type: 2}
   references:
     version: 2
     RefIds:
     - rid: 0
       type: {class: WeaponUpgrade, ns: , asm: Assembly-CSharp}
       data:
-        _data: {fileID: 11400000, guid: ecd0bed1aa1557b41a05c64eca64101f, type: 2}
+        _data: {fileID: 11400000, guid: 426b5e4ffb2642f42aa06e9716f43860, type: 2}

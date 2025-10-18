@@ -21,8 +21,8 @@ MonoBehaviour:
     - rid: 0
       type: {class: WeaponBullet, ns: Gameplay.Weapons, asm: Assembly-CSharp}
       data:
-        _damageMin: 8
-        _damageMax: 9
+        _damageMin: 5.5
+        _damageMax: 6.5
         _coolDown: 0.7
         _speed: 6
         _range: 0

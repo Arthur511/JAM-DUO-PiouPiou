@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System.Collections;
 
 /// <summary>
 /// Represents the in-game lifebar of the player
@@ -9,8 +10,8 @@ public class LifeBar : MonoBehaviour
 {
     [SerializeField] Image _spriteImage;
     [SerializeField] Image _iconImage;
-    int comptHit = 0;
-    //[SerializeField] Transform _transform;
+
+    Coroutine _currentCoroutine;
 
     public void SetValue(float value)
     {
@@ -29,14 +30,9 @@ public class LifeBar : MonoBehaviour
     {
         if (MainGameplay.Instance.Player.IsHit)
         {
-            comptHit += (int)Time.deltaTime;
-            if (comptHit % 2 == 0)
+            if (_currentCoroutine == null)
             {
-                _iconImage.color = Color.black;
-            }
-            else if (comptHit % 2 != 0)
-            {
-                _iconImage.color = Color.white;
+                _currentCoroutine = StartCoroutine(BlinkPlayerIcon());
             }
         }
         else
@@ -44,4 +40,15 @@ public class LifeBar : MonoBehaviour
             _iconImage.color = Color.white;
         }
     }
+
+    IEnumerator BlinkPlayerIcon()
+    {
+        _iconImage.color = Color.black;
+        yield return new WaitForSeconds(0.1f);
+        _iconImage.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+
+        _currentCoroutine = null;
+    }
+
 }

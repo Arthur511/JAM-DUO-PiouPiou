@@ -14,82 +14,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waves:
   - _timeToStart: 2
-    _timesToRepeat: 8
-    _repeatTimer: 3
-    _enemyCount: 4
+    _timesToRepeat: 10
+    _repeatTimer: 2.5
+    _enemyCount: 1
     _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
     _spawnDistance: 10
     _canDisplayMessage: 1
   - _timeToStart: 30
-    _timesToRepeat: 3
-    _repeatTimer: 5
-    _enemyCount: 2
-    _enemy: {fileID: 11400000, guid: d2e6d038b972e184db0dd3298f31b1c4, type: 2}
+    _timesToRepeat: 5
+    _repeatTimer: 3
+    _enemyCount: 5
+    _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
     _spawnDistance: 12
     _canDisplayMessage: 0
-  - _timeToStart: 30
-    _timesToRepeat: 1
+  - _timeToStart: 50
+    _timesToRepeat: 3
     _repeatTimer: 2
     _enemyCount: 10
     _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
     _spawnDistance: 10
     _canDisplayMessage: 1
-  - _timeToStart: 70
-    _timesToRepeat: 3
+  - _timeToStart: 80
+    _timesToRepeat: 5
     _repeatTimer: 5
     _enemyCount: 15
-    _enemy: {fileID: 11400000, guid: d2e6d038b972e184db0dd3298f31b1c4, type: 2}
+    _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
     _spawnDistance: 10
     _canDisplayMessage: 0
   - _timeToStart: 80
-    _timesToRepeat: 1
-    _repeatTimer: 5
+    _timesToRepeat: 12
+    _repeatTimer: 2
     _enemyCount: 1
-    _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
+    _enemy: {fileID: 11400000, guid: d2e6d038b972e184db0dd3298f31b1c4, type: 2}
     _movementType: 0
     _spawnDistance: 8
     _canDisplayMessage: 1
-  - _timeToStart: 130
-    _timesToRepeat: 4
-    _repeatTimer: 2
-    _enemyCount: 3
+  - _timeToStart: 120
+    _timesToRepeat: 6
+    _repeatTimer: 3
+    _enemyCount: 5
     _enemy: {fileID: 11400000, guid: d2e6d038b972e184db0dd3298f31b1c4, type: 2}
     _movementType: 0
     _spawnDistance: 10
     _canDisplayMessage: 0
-  - _timeToStart: 130
-    _timesToRepeat: 2
+  - _timeToStart: 120
+    _timesToRepeat: 3
     _repeatTimer: 6
-    _enemyCount: 7
+    _enemyCount: 15
     _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
-    _spawnDistance: 6
-    _canDisplayMessage: 0
-  - _timeToStart: 160
-    _timesToRepeat: 6
+    _spawnDistance: 9
+    _canDisplayMessage: 1
+  - _timeToStart: 120
+    _timesToRepeat: 10
     _repeatTimer: 1
-    _enemyCount: 5
-    _enemy: {fileID: 11400000, guid: d2e6d038b972e184db0dd3298f31b1c4, type: 2}
+    _enemyCount: 1
+    _enemy: {fileID: 11400000, guid: 6b7f16fb8e8d5c44a9e0281eb9deb270, type: 2}
     _movementType: 0
     _spawnDistance: 9
     _canDisplayMessage: 0
-  - _timeToStart: 160
+  - _timeToStart: 150
     _timesToRepeat: 10
-    _repeatTimer: 5
-    _enemyCount: 1
-    _enemy: {fileID: 11400000, guid: 6b7f16fb8e8d5c44a9e0281eb9deb270, type: 2}
+    _repeatTimer: 2
+    _enemyCount: 2
+    _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
     _spawnDistance: 6
     _canDisplayMessage: 1
-  - _timeToStart: 160
-    _timesToRepeat: 10
-    _repeatTimer: 5
-    _enemyCount: 1
+  - _timeToStart: 150
+    _timesToRepeat: 5
+    _repeatTimer: 2
+    _enemyCount: 3
     _enemy: {fileID: 11400000, guid: 6b7f16fb8e8d5c44a9e0281eb9deb270, type: 2}
     _movementType: 0
     _spawnDistance: 6
+    _canDisplayMessage: 0
+  - _timeToStart: 160
+    _timesToRepeat: 10
+    _repeatTimer: 5
+    _enemyCount: 3
+    _enemy: {fileID: 11400000, guid: d2e6d038b972e184db0dd3298f31b1c4, type: 2}
+    _movementType: 0
+    _spawnDistance: 8
     _canDisplayMessage: 0

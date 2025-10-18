@@ -25,14 +25,14 @@ public class WaveInstance
         if (_waveData.TimeToStart > currentTimer)     
             return;
 
-        if (currentTimer == _waveData.TimeToStart && WaveData.CanDisplayMessage == true)
+        /*if (currentTimer == _waveData.TimeToStart && _waveData.CanDisplayMessage == true)
         {
             MainGameplay.Instance.
             StartCoroutine(MainGameplay.Instance.DisplayAnnoncement(manager._messageList[manager._messageIndex],
             MainGameplay.Instance.TextComponent,
             MainGameplay.Instance.PanelForDisplay));
             manager._messageIndex++;
-        }
+        }*/
 
         _timer -= Time.deltaTime;
 
