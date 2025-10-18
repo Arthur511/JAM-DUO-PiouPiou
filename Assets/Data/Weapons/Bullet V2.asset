@@ -21,10 +21,10 @@ MonoBehaviour:
     - rid: 0
       type: {class: WeaponBullet, ns: Gameplay.Weapons, asm: Assembly-CSharp}
       data:
-        _damageMin: 8
-        _damageMax: 9
+        _damageMin: 7
+        _damageMax: 8
         _coolDown: 1
         _speed: 7
-        _radius: 0
+        _range: 0
         _weaponPrefab: {fileID: 3633932044844237191, guid: 08ebc7dc14884374898f53f3510029b1, type: 3}
         _maxProjectileInShoot: 1

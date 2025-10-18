@@ -15,8 +15,8 @@ public class WavesManager : MonoBehaviour
     float _timer;
 
 
-    [SerializeField] List<string> _messageList = new List<string>();
-    int _messageIndex = 0;
+    public List<string> _messageList = new List<string>();
+    [HideInInspector ]public int _messageIndex = 0;
 
     void Awake()
     {
@@ -41,14 +41,14 @@ public class WavesManager : MonoBehaviour
 
             if (_wavesToPlay[i].IsDone)
             {
-                if (_wavesToPlay[i].WaveData.CanDisplayMessage == true)
+                /*if (_wavesToPlay[i].WaveData.CanDisplayMessage == true)
                 {
                     MainGameplay.Instance.
                     StartCoroutine(MainGameplay.Instance.DisplayAnnoncement(_messageList[_messageIndex],
                     MainGameplay.Instance.TextComponent,
                     MainGameplay.Instance.PanelForDisplay));
                     _messageIndex++;
-                }
+                }*/
                 _wavesToPlay.RemoveAt(i);
             }
         }

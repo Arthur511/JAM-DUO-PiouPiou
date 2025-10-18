@@ -46,7 +46,7 @@ public class MainGameplay : MonoBehaviour
     [SerializeField] GameObject _videoClip;
     [SerializeField] List<GameObject> _players = new List<GameObject>();
 
-    [SerializeField] Image _imageStrobInterTitle;
+    [SerializeField] Image _imageStrobIntertitle;
 
 
     #endregion
@@ -84,7 +84,7 @@ public class MainGameplay : MonoBehaviour
         }
 
         Instance = this;
-        _color = _imageStrobInterTitle.color;
+        _color = _imageStrobIntertitle.color;
         StartCoroutine(DisplayAnnoncement(_textToDisplay, TextComponent, PanelForDisplay));
 
     }
@@ -189,25 +189,28 @@ public class MainGameplay : MonoBehaviour
         for (int i = 0; i <= _timeDisplayIntertitle/0.05; i++)
         {
             _color.a = Random.Range(0.001f, 0.01f);
-            _imageStrobInterTitle.color = _color;
+            _imageStrobIntertitle.color = _color;
             yield return new WaitForSecondsRealtime(0.05f);
         }
     }
 
     void OnPlayerDeath()
     {
+        Pause();
         State = GameState.GameOver;
         _gameUIManager.DisplayGameOver();
     }
 
     void SetVictory()
     {
+        Pause();
         State = GameState.GameOver;
         _gameUIManager.DisplayVictory();
     }
 
     public void OnClickQuit()
     {
+        UnPause();
         _videoClip.GetComponent<VideoPlayer>().enabled = true;
         StartCoroutine(FinishTheGame());
     }
@@ -219,6 +222,7 @@ public class MainGameplay : MonoBehaviour
         {
             go.SetActive(false);
         }
+        AudioManager.instance.GetComponent<AudioSource>().volume-= Time.deltaTime;
         yield return new WaitForSeconds(10f);
         SceneManager.LoadScene("MainMenu");
     }

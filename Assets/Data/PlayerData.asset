@@ -17,7 +17,7 @@ MonoBehaviour:
   _weapons:
   - {fileID: 11400000, guid: 84730a4dc8ee0774f8d7c6bd2a585862, type: 2}
   _upgrades:
-  - {fileID: 11400000, guid: 1436b540ef0e07049a99ab4faec6b022, type: 2}
+  - {fileID: 11400000, guid: 6b537eeaa4184334db919e6a09060bbf, type: 2}
   - {fileID: 11400000, guid: 7ebc91b035a24b442923211e351a27c7, type: 2}
   - {fileID: 11400000, guid: cb624bc7f8ea6c04faac4a533379d2f1, type: 2}
   - {fileID: 11400000, guid: 923bfd22064ccbf4dacd282bd60b8788, type: 2}
