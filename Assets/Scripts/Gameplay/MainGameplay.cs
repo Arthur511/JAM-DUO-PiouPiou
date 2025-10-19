@@ -218,7 +218,7 @@ public class MainGameplay : MonoBehaviour
     private IEnumerator FinishTheGame()
     {
         yield return new WaitForSeconds(0.1f);
-        AudioManager.instance.GetComponent<AudioSource>().volume-= Time.time;
+        AudioManager.instance.GetComponent<AudioSource>().volume-= Time.deltaTime;
         foreach (GameObject go in _players)
         {
             go.SetActive(false);
