@@ -126,6 +126,9 @@ public class EnemyController : Unit
     void Die()
     {
         MainGameplay.Instance.Enemies.Remove(this);
+        GameObject smokeParticle = Instantiate(ParticleManager.instance._smokeParticle, transform.position, Quaternion.identity);
+        ParticleManager.instance.PlayParticule(smokeParticle.GetComponent<ParticleSystem>());
+        GameObject.Destroy(smokeParticle, 3);
         GameObject.Destroy(gameObject);
         MainGameplay.Instance.Player.IsHit = false;
         var xp = GameObject.Instantiate(MainGameplay.Instance.PrefabXP, transform.position, Quaternion.identity);
@@ -136,6 +139,9 @@ public class EnemyController : Unit
     {
         MainGameplay.Instance.Enemies.Remove(this);
         MainGameplay.Instance.Player.IsHit = false;
+        GameObject smokeParticle = Instantiate(ParticleManager.instance._smokeParticle, transform.position, Quaternion.identity);
+        ParticleManager.instance.PlayParticule(smokeParticle.GetComponent<ParticleSystem>());
+        GameObject.Destroy(smokeParticle, 3);
         GameObject.Destroy(gameObject);
         var xp = GameObject.Instantiate(MainGameplay.Instance.SuperPrefabXP, transform.position, Quaternion.identity);
         xp.GetComponent<CollectableXp>().Initialize(5);

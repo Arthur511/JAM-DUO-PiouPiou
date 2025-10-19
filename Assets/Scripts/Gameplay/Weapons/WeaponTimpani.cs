@@ -4,7 +4,6 @@ using UnityEngine.UIElements;
 
 namespace Gameplay.Weapons
 {
-
     public class WeaponTimpani : WeaponBase
     {
 

@@ -3,6 +3,8 @@ using UnityEngine;
 public class ParticleManager : MonoBehaviour
 {
     public static ParticleManager instance;
+
+    public GameObject _smokeParticle;
     private void Awake()
     {
         instance = this;

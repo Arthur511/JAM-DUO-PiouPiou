@@ -38,7 +38,7 @@ namespace Gameplay.Weapons
                 return;
 
             player.StartCoroutine(ShootEnemies(enemies, player));
-
+            
         }
         private IEnumerator ShootEnemies(List<EnemyController> enemies, PlayerController player)
         {
@@ -60,7 +60,7 @@ namespace Gameplay.Weapons
                     GameObject go = GameObject.Instantiate(_weaponPrefab, playerPosition, Quaternion.identity);
                     go.GetComponent<Bullet>().Initialize(direction, GetDamage(), _speed);
 
-                    yield return new WaitForSeconds(0.2f);
+                    yield return new WaitForSeconds(0.05f);
                 }
             }
         }

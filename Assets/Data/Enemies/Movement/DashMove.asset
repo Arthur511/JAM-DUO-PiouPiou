@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4c40f5f357e2642877c19d060e1f5f, type: 3}
   m_Name: DashMove
   m_EditorClassIdentifier: 
-  _timer: 3
+  _dashPower: 7

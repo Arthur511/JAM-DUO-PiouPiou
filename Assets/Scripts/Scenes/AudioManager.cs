@@ -2,6 +2,9 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Represents the element who manage sounds and musics in the scene
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
@@ -12,6 +15,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Weapon AudioSource")]
     public AudioSource TriangleAudioSource;
+    //public AudioSource TrumpetAudioSource;
     public AudioSource FluteAudioSource;
     public AudioSource TimpaniAudioSource;
 

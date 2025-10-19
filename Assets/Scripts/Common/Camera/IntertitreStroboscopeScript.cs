@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class IntertitreStroboscopeScript : MonoBehaviour
 {
     [SerializeField] Image _image;
