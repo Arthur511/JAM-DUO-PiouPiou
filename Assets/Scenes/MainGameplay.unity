@@ -13456,7 +13456,7 @@ GameObject:
   - component: {fileID: 1764266233}
   - component: {fileID: 1764266232}
   m_Layer: 0
-  m_Name: R
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18367,7 +18367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 50563239523828694, guid: 0f36e4d70ed5b614c821cb5a8db25167, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 56
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 50563239523828694, guid: 0f36e4d70ed5b614c821cb5a8db25167, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -20611,7 +20611,7 @@ GameObject:
   - component: {fileID: 4791826454949693046}
   - component: {fileID: 3955361903478892223}
   m_Layer: 8
-  m_Name: ColliderHit (1)
+  m_Name: ColliderHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

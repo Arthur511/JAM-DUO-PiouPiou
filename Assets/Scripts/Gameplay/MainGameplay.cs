@@ -228,7 +228,7 @@ public class MainGameplay : MonoBehaviour
             go.SetActive(false);
         }
         yield return new WaitForSeconds(10f);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
     }
 
 

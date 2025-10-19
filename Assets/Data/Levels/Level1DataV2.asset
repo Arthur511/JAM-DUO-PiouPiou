@@ -91,13 +91,13 @@ MonoBehaviour:
     _enemyCount: 3
     _enemy: {fileID: 11400000, guid: 6b7f16fb8e8d5c44a9e0281eb9deb270, type: 2}
     _movementType: 0
-    _spawnDistance: 6
+    _spawnDistance: 10
     _canDisplayMessage: 0
   - _timeToStart: 160
     _timesToRepeat: 10
-    _repeatTimer: 5
+    _repeatTimer: 3
     _enemyCount: 3
     _enemy: {fileID: 11400000, guid: d2e6d038b972e184db0dd3298f31b1c4, type: 2}
     _movementType: 0
-    _spawnDistance: 8
+    _spawnDistance: 12
     _canDisplayMessage: 0
