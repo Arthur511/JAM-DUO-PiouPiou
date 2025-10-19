@@ -20090,6 +20090,18 @@ PrefabInstance:
       value: -320
       objectReference: {fileID: 0}
     - target: {fileID: 973404347, guid: 4f046e9016ec83a41ad4044663f79a15, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.81886786
+      objectReference: {fileID: 0}
+    - target: {fileID: 973404347, guid: 4f046e9016ec83a41ad4044663f79a15, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.81886786
+      objectReference: {fileID: 0}
+    - target: {fileID: 973404347, guid: 4f046e9016ec83a41ad4044663f79a15, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.81886786
+      objectReference: {fileID: 0}
+    - target: {fileID: 973404347, guid: 4f046e9016ec83a41ad4044663f79a15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 133957339}
@@ -20598,7 +20610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3779210530025805258, guid: cae4d37c021d385429ef7a34e7079b5f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881586988838972604, guid: cae4d37c021d385429ef7a34e7079b5f, type: 3}
       propertyPath: m_RenderMode
@@ -20691,6 +20703,18 @@ PrefabInstance:
     - target: {fileID: 7144217253570902145, guid: cae4d37c021d385429ef7a34e7079b5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167110715841366104, guid: cae4d37c021d385429ef7a34e7079b5f, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167110715841366104, guid: cae4d37c021d385429ef7a34e7079b5f, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167110715841366104, guid: cae4d37c021d385429ef7a34e7079b5f, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.81960785
       objectReference: {fileID: 0}
     - target: {fileID: 7167110715841366104, guid: cae4d37c021d385429ef7a34e7079b5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -17,7 +17,7 @@ public class DashMove : EnemyMove
             direction.y = 0;
 
             float moveStep = speed * Time.deltaTime;
-            return direction.normalized;
+            return direction.normalized * 5f;
         }
         return Vector3.zero;
     }
