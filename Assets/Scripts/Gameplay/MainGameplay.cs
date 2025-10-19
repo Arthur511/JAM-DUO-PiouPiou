@@ -48,6 +48,8 @@ public class MainGameplay : MonoBehaviour
 
     [SerializeField] Image _imageStrobIntertitle;
 
+    [SerializeField] AudioClip _theEndClip;
+
 
     #endregion
 
@@ -211,6 +213,8 @@ public class MainGameplay : MonoBehaviour
     public void OnClickQuit()
     {
         UnPause();
+        AudioManager.instance.audioSource.Stop();
+        AudioManager.instance.audioSource.PlayOneShot(_theEndClip);
         _videoClip.GetComponent<VideoPlayer>().enabled = true;
         StartCoroutine(FinishTheGame());
     }

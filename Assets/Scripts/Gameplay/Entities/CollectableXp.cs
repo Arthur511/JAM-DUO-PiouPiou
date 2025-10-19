@@ -6,7 +6,7 @@ using UnityEngine;
 public class CollectableXp : MonoBehaviour
 {
     public int Value { get; private set; }
-
+    [SerializeField] float _speed;
     public void Initialize(int value)
     {
         Value = value;
@@ -22,4 +22,13 @@ public class CollectableXp : MonoBehaviour
             GameObject.Destroy(gameObject);
         }
     }
+
+    private void Update()
+    {
+        if(Vector3.Distance(transform.position, MainGameplay.Instance.Player.transform.position) < 3)
+        {
+            transform.position = Vector3.Lerp(transform.position, MainGameplay.Instance.Player.transform.position, _speed* Time.deltaTime);
+        }
+    }
+
 }

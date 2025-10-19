@@ -18,7 +18,7 @@ namespace Gameplay.Weapons
 
             _timerCoolDown -= _coolDown;
 
-            RaycastHit[] hits = Physics.RaycastAll(player.transform.position, (player.transform.forward).normalized, _range);
+            RaycastHit[] hits = Physics.BoxCastAll(player.transform.position, Vector3.one, (player.transform.forward).normalized, Quaternion.identity ,_range);
 
             Quaternion direction = Quaternion.LookRotation(player.transform.forward, Vector3.forward);
             go = GameObject.Instantiate(_weaponPrefab, player.transform.position + direction*player.transform.forward, direction);

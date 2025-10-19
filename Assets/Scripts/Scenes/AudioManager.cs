@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    AudioSource audioSource;
+    [HideInInspector] public AudioSource audioSource;
     int _currentIndexClip = 0;
     [SerializeField] List<AudioClip> clipList;
 
