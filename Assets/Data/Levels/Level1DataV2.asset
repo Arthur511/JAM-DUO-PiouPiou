@@ -22,7 +22,7 @@ MonoBehaviour:
     _spawnDistance: 10
     _canDisplayMessage: 1
   - _timeToStart: 30
-    _timesToRepeat: 5
+    _timesToRepeat: 6
     _repeatTimer: 3
     _enemyCount: 5
     _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
@@ -68,7 +68,7 @@ MonoBehaviour:
     _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
     _spawnDistance: 9
-    _canDisplayMessage: 1
+    _canDisplayMessage: 0
   - _timeToStart: 120
     _timesToRepeat: 10
     _repeatTimer: 1
@@ -76,7 +76,7 @@ MonoBehaviour:
     _enemy: {fileID: 11400000, guid: 6b7f16fb8e8d5c44a9e0281eb9deb270, type: 2}
     _movementType: 0
     _spawnDistance: 9
-    _canDisplayMessage: 0
+    _canDisplayMessage: 1
   - _timeToStart: 150
     _timesToRepeat: 10
     _repeatTimer: 2
@@ -84,7 +84,7 @@ MonoBehaviour:
     _enemy: {fileID: 11400000, guid: c2a0c37af99c5da48a21a1db3edd35ad, type: 2}
     _movementType: 0
     _spawnDistance: 6
-    _canDisplayMessage: 1
+    _canDisplayMessage: 0
   - _timeToStart: 150
     _timesToRepeat: 5
     _repeatTimer: 2
@@ -92,7 +92,7 @@ MonoBehaviour:
     _enemy: {fileID: 11400000, guid: 6b7f16fb8e8d5c44a9e0281eb9deb270, type: 2}
     _movementType: 0
     _spawnDistance: 10
-    _canDisplayMessage: 0
+    _canDisplayMessage: 1
   - _timeToStart: 160
     _timesToRepeat: 10
     _repeatTimer: 3

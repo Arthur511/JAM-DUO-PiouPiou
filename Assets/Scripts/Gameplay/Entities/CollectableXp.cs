@@ -20,6 +20,9 @@ public class CollectableXp : MonoBehaviour
         {
             other.CollectXP(Value);
             GameObject.Destroy(gameObject);
+            GameObject earnXpParticle = Instantiate(ParticleManager.instance._earnXPParticle, other.gameObject.transform.position, Quaternion.identity);
+            ParticleManager.instance.PlayParticule(earnXpParticle.GetComponent<ParticleSystem>());
+            GameObject.Destroy(earnXpParticle, 3);
         }
     }
 

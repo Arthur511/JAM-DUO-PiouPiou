@@ -785,6 +785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1f16bf6b1835248b8accdc86cecd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hitParticle: {fileID: 3980889501249543905, guid: 8448d493abb58a844ada6018d25ac525, type: 3}
+  _earnXPParticle: {fileID: 6939348469803525137, guid: 675630df97716f14198a815bd88deb15, type: 3}
   _smokeParticle: {fileID: 6939348469803525137, guid: 953d4cc75352d6340b41061db90a7655, type: 3}
 --- !u!4 &181981042 stripped
 Transform:
