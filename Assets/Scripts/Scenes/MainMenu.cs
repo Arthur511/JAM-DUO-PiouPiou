@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class MainMenu : MonoBehaviour
 {
+
+
     public GameObject MainMenuObject;
     public GameObject SettingsMenuObject;
 
     public Animator Animator;
     public GameObject FadeImage;
-
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(GoToMenu());
     }

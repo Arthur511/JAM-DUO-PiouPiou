@@ -212,7 +212,6 @@ public class MainGameplay : MonoBehaviour
 
     public void OnClickQuit()
     {
-        UnPause();
         AudioManager.instance.audioSource.Stop();
         AudioManager.instance.audioSource.PlayOneShot(_theEndClip);
         _videoClip.GetComponent<VideoPlayer>().enabled = true;
@@ -221,13 +220,14 @@ public class MainGameplay : MonoBehaviour
 
     private IEnumerator FinishTheGame()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         foreach (GameObject go in _players)
         {
             go.SetActive(false);
         }
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSecondsRealtime(10f);
         SceneManager.LoadScene(0);
+        UnPause();
     }
 
 
