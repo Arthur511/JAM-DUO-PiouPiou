@@ -1108,12 +1108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1708,7 +1708,7 @@ RectTransform:
   m_GameObject: {fileID: 1152089657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.77903, y: 0.77903, z: 0.77903}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 844891248}
@@ -2099,7 +2099,7 @@ RectTransform:
   m_GameObject: {fileID: 1642049497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7192151, y: 0.7192151, z: 0.7192151}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1107976733}
@@ -2233,6 +2233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163d9efe1aa7bd14bbf48bbefaed3ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   clipList:
   - {fileID: 8300000, guid: 393405abcc2d2634bb19ad805644f784, type: 3}
   TriangleAudioSource: {fileID: 0}
